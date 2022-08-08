@@ -53,6 +53,7 @@ public class ChunkController : MonoBehaviour
         this.gameObject.SetActive(false);
         //GameObject.Find("blender").GetComponent<Animator>().SetBool("phase2", true);
         GameObject.Find("SprinkleBase").GetComponent<BoxCollider>().enabled = true;
+        GameObject.Find("SprinkleBase").transform.GetChild(0).gameObject.SetActive(true);
         ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
         b.SprinkleMenu.SetActive(true);
         IceCubeController ic = GameObject.FindObjectOfType<IceCubeController>();

@@ -136,6 +136,8 @@ public class AnimController : MonoBehaviour
 
     public void WaterPouringA()
     {
+        InstructionAnim.Play("Idle");
+        InstructionAnim.Play("InstructionInfinity");
         CoffeeController c = GameObject.Find("CoffeeController").GetComponent<CoffeeController>();
         c.WaterPouring.SetActive(true);
     }

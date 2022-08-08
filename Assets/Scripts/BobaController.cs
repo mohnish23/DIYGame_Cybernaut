@@ -28,7 +28,9 @@ public class BobaController : MonoBehaviour
     {
         if(phase3 == true)
         {
-            ObjectPourSurface.SetActive(true);
+            //ObjectPourSurface.SetActive(true);
+            GameObject.Find("SprinkleBase").GetComponent<BoxCollider>().enabled = true;
+            GameObject.Find("SprinkleBase").transform.GetChild(0).gameObject.SetActive(true);
             ObjectPourMenu.SetActive(true);
         }
         else if (phase2 == true)
@@ -64,10 +66,6 @@ public class BobaController : MonoBehaviour
                     Touch touch = Input.GetTouch(0);
                     if(touch.phase == TouchPhase.Moved)
                         ScoopAnim.speed = 1;
-                }
-                else
-                {
-                    ScoopAnim.speed = 0;
                 }
             }
         }
