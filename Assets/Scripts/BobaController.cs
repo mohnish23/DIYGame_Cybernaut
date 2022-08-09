@@ -49,12 +49,14 @@ public class BobaController : MonoBehaviour
                 speed = Time.deltaTime * 2;
                 CupAnim.speed = 1;
                 pour.SetActive(true);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
             }
             else
             {
                 speed = 0;
                 CupAnim.speed = 0;
                 pour.SetActive(false);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
             }
         }
         else

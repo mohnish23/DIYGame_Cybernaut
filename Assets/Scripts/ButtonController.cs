@@ -215,6 +215,8 @@ public class ButtonController : MonoBehaviour
     public void LevelCompleteButton()
     {
         GameManager g = GameObject.Find("GameManager").GetComponent<GameManager>();
+        SoundManager s = FindObjectOfType<SoundManager>();
+        s.StopAllSounds();
 
         if (g.isExLevel == true)
         {

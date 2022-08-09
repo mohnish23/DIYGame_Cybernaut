@@ -32,11 +32,13 @@ public class ChunkController : MonoBehaviour
                 if(touch.phase == TouchPhase.Moved)
                 {
                     anim.speed = 1;
+                    GameObject.Find("Sounds_Ice").GetComponent<AudioSource>().UnPause();
                 }
             }
             else
             {
                 anim.speed = 0;
+                GameObject.Find("Sounds_Ice").GetComponent<AudioSource>().Pause();
             }
         }
     }

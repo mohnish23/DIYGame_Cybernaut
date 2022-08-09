@@ -69,6 +69,7 @@ public class CoffeeController : MonoBehaviour
     {
         if(phaseD1 == true)
         {
+            GameObject.Find("Sounds_PowderPour").GetComponent<AudioSource>().Stop();
             InstructionAnim.Play("InstructionDragDown");
             CupAnim.gameObject.SetActive(true);
             if (canControl == true)
@@ -77,17 +78,20 @@ public class CoffeeController : MonoBehaviour
                 {
                     CupAnim.speed = 1;
                     pour.SetActive(true);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
                 else
                 {
                     CupAnim.speed = 0;
                     pour.SetActive(false);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
                 }
             }
 
             if (CupLiquid.Fill <= 0.6f)
             {
                 pour.SetActive(false);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
                 Camera.main.GetComponent<Animator>().SetBool("CamAnim2", true);
                 InstructionAnim.Play("Idle");
                 //ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
@@ -105,6 +109,7 @@ public class CoffeeController : MonoBehaviour
         else if(phaseD == true)
         {
             InstructionAnim.Play("InstructionDragDown");
+            GameObject.Find("Sounds_PowderPour").GetComponent<AudioSource>().Pause();
             MachineAnim.Play("CoffeePress");
             pourCoffee.SetActive(false);
             CoffeeBottle.SetActive(false);
@@ -134,12 +139,14 @@ public class CoffeeController : MonoBehaviour
                     CupAnim.speed = 1;
                     WaterAnim.speed = 1;
                     pour.SetActive(true);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
                 else
                 {
                     CupAnim.speed = 0;
                     WaterAnim.speed = 0;
                     pour.SetActive(false);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
                 }
             }
 
@@ -152,6 +159,7 @@ public class CoffeeController : MonoBehaviour
                 phaseC1 = false;
                 Camera.main.GetComponent<Animator>().SetBool("CamAnim1", true);
                 Invoke("CoffeeNextButton", 0.2f);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
             }
         }
         else if (phaseC == true)
@@ -165,15 +173,18 @@ public class CoffeeController : MonoBehaviour
                 if(touch.phase == TouchPhase.Moved)
                 {
                     WaterAnim.speed = 1;
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
             }
             else
             {
                 WaterAnim.speed = 0;
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
             }
         }
         else if (phaseB3 == true)
         {
+            GameObject.Find("Sounds_Stirring").GetComponent<AudioSource>().Stop();
             InstructionAnim.Play("InstructionDragDown");
             CupAnim.gameObject.SetActive(true);
             Animator WaterAnim = WaterPouring2.GetComponent<Animator>();
@@ -184,12 +195,14 @@ public class CoffeeController : MonoBehaviour
                 WaterAnim.speed = 1;
                 CupAnim.speed = 1;
                 pour3.SetActive(true);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
             }
             else
             {
                 WaterAnim.speed = 0;
                 CupAnim.speed = 0;
                 pour3.SetActive(false);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
             }
 
             if (CupLiquid.Fill <= 0.3f)
@@ -197,11 +210,13 @@ public class CoffeeController : MonoBehaviour
                 WaterPouring2.GetComponent<AnimController>().LevelComplete();
                 pour3.SetActive(false);
                 WaterAnim.gameObject.SetActive(false);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
                 phaseB3 = false;
             }
         }
         else if (phaseB2 == true)
         {
+            GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
             pourWater.SetActive(false);
             WaterPourer.SetActive(false);
             StirringSpoon.SetActive(true);
@@ -216,10 +231,12 @@ public class CoffeeController : MonoBehaviour
                 StirringSpoon.transform.position = new Vector3(StirringSpoon.transform.position.x + touch.deltaPosition.x * touchSpeed,
                     StirringSpoon.transform.position.y,
                     StirringSpoon.transform.position.z + touch.deltaPosition.y * touchSpeed);
+                GameObject.Find("Sounds_Stirring").GetComponent<AudioSource>().UnPause();
             }
             else
             {
                 WaterAnim.speed = 0;
+                GameObject.Find("Sounds_Stirring").GetComponent<AudioSource>().Pause();
             }
 
             StirringSpoon.transform.position = new Vector3(Mathf.Clamp(StirringSpoon.transform.position.x, -0.4f, 0.4f),
@@ -228,6 +245,7 @@ public class CoffeeController : MonoBehaviour
         }
         else if (phaseB1 == true)
         {
+            GameObject.Find("Sounds_PowderPour").GetComponent<AudioSource>().Stop();
             InstructionAnim.Play("InstructionDragDown");
             Animator WaterAnim = WaterPouring2.GetComponent<Animator>();
             WaterAnim.Play("PowderCupFillAnim");
@@ -242,12 +260,14 @@ public class CoffeeController : MonoBehaviour
                 {
                     WaterAnim.speed = 1;
                     pourWater.SetActive(true);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
             }
             else
             {
                 WaterAnim.speed = 0;
                 pourWater.SetActive(false);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
             }
         }
         else if (phaseB == true)
@@ -256,6 +276,9 @@ public class CoffeeController : MonoBehaviour
             WaterAnim.speed = 0;*/
 
             //InstructionAnim.Play("InstructionDragDown");
+
+            GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().Stop();
+
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -263,12 +286,14 @@ public class CoffeeController : MonoBehaviour
                 {
                     BottleAnim.speed = 1;
                     pourCoffee.SetActive(true);
+                    GameObject.Find("Sounds_PowderPour").GetComponent<AudioSource>().UnPause();
                 }
             }
             else
             {
                 BottleAnim.speed = 0;
                 pourCoffee.SetActive(false);
+                GameObject.Find("Sounds_PowderPour").GetComponent<AudioSource>().Pause();
             }
         }
         else if (phase2 == true)
@@ -289,11 +314,13 @@ public class CoffeeController : MonoBehaviour
                         MilkPour.transform.position.z + touch.deltaPosition.y * touchSpeed);
                     CupAnim2.speed = 1;
                     pour2.SetActive(true);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
                 else
                 {
                     CupAnim2.speed = 0;
                     pour2.SetActive(false);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
                 }
             }
 
@@ -313,11 +340,13 @@ public class CoffeeController : MonoBehaviour
                 {
                     CupAnim.speed = 1;
                     pour.SetActive(true);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
                 else
                 {
                     CupAnim.speed = 0;
                     pour.SetActive(false);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
                 }
             }
 
@@ -341,6 +370,7 @@ public class CoffeeController : MonoBehaviour
         }
         else if(phase0_5 == true)
         {
+            GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().Stop();
             InstructionAnim.Play("InstructionInfinity");
             if (Input.touchCount > 0)
             {
@@ -348,15 +378,20 @@ public class CoffeeController : MonoBehaviour
                 if(touch.phase == TouchPhase.Moved)
                 {
                     CoffeeGrinder.GetComponent<Animator>().speed = 1;
+                    GameObject.Find("Sounds_CoffeeGrinding").GetComponent<AudioSource>().UnPause();
                 }
             }
             else
             {
                 CoffeeGrinder.GetComponent<Animator>().speed = 0;
+                GameObject.Find("Sounds_CoffeeGrinding").GetComponent<AudioSource>().Pause();
             }
         }
         else if (phase0 == true)
         {
+            GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().Pause();
+            GameObject.Find("Sounds_CoffeeGrinding").GetComponent<AudioSource>().Pause();
+            GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
             StartCoroutine(StopWater());
 
             if (Input.touchCount > 0)
@@ -382,11 +417,13 @@ public class CoffeeController : MonoBehaviour
                     if (touch.phase == TouchPhase.Moved)
                     {
                         ScoopAnim.speed = 1;
+                        GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().UnPause();
                     }
                 }
                 else
                 {
                     ScoopAnim.speed = 0;
+                    GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().Pause();
                 }
             }
         }
@@ -417,6 +454,7 @@ public class CoffeeController : MonoBehaviour
     public IEnumerator StopWater()
     {
         yield return new WaitForSeconds(6f);
+        GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
         WaterPouring.SetActive(false);
         phase0 = false;
         Camera.main.GetComponent<Animator>().SetBool("CamAnim1", true);

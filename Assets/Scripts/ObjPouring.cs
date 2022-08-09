@@ -33,10 +33,12 @@ public class ObjPouring : MonoBehaviour
             ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
             b.NextButton1.SetActive(true);
             b.NextButton3.SetActive(true);
+            GameObject.Find("Sounds_Sprinkles").GetComponent<AudioSource>().UnPause();
         }
         else
         {
             canPour = false;
+            GameObject.Find("Sounds_Sprinkles").GetComponent<AudioSource>().Pause();
         }
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -0.3f, 0.38f),

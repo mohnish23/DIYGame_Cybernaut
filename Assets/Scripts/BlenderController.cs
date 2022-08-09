@@ -32,7 +32,8 @@ public class BlenderController : MonoBehaviour
     {
         if(Control == true)
         {
-            if(Input.touchCount > 0)
+            GameObject.Find("Sounds_Blender").GetComponent<AudioSource>().Pause();
+            if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
                 if(touch.phase == TouchPhase.Moved)
@@ -40,6 +41,7 @@ public class BlenderController : MonoBehaviour
                     BlenderAnim.speed = 1;
                     CupAnim.speed = 1;
                     pour.SetActive(true);
+                    GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
             }
             else
@@ -47,6 +49,7 @@ public class BlenderController : MonoBehaviour
                 BlenderAnim.speed = 0;
                 CupAnim.speed = 0;
                 pour.SetActive(false);
+                GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
             }
         }
 
@@ -56,12 +59,14 @@ public class BlenderController : MonoBehaviour
             {
                 GameObject.Find("Instructions").GetComponent<Animator>().Play("Idle");
                 loop = true;
+                GameObject.Find("Sounds_Blender").GetComponent<AudioSource>().UnPause();
             }
             else
             {
                 GameObject.Find("Instructions").GetComponent<Animator>().Play("InstructionTapHold");
                 loop = false;
                 BlenderAnim.speed = 0;
+                GameObject.Find("Sounds_Blender").GetComponent<AudioSource>().Pause();
             }
         }
     }
@@ -128,6 +133,7 @@ public class BlenderController : MonoBehaviour
         ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
         b.FlavorMenu.SetActive(true);
         transform.parent.parent.gameObject.SetActive(false);
+        GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
     }
 
     public void CantControl2()

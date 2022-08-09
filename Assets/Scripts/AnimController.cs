@@ -55,6 +55,7 @@ public class AnimController : MonoBehaviour
         b.transform.parent.GetComponent<Animator>().Play("BlenderOut");
         b.Control = false;
         b.pour.SetActive(false);
+        GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
     }
 
     public void BlenderAnimComplete3_2()
@@ -132,6 +133,7 @@ public class AnimController : MonoBehaviour
     public void AssemblePot1()
     {
         transform.parent.GetComponent<Animator>().enabled = true;
+        GameObject.Find("Sounds_CoffeeGrinding").GetComponent<AudioSource>().Pause();
     }
 
     public void WaterPouringA()
@@ -140,6 +142,7 @@ public class AnimController : MonoBehaviour
         InstructionAnim.Play("InstructionInfinity");
         CoffeeController c = GameObject.Find("CoffeeController").GetComponent<CoffeeController>();
         c.WaterPouring.SetActive(true);
+        GameObject.Find("Sounds_CoffeeGrinding").GetComponent<AudioSource>().Pause();
     }
 
     public void WaterPouring()
@@ -166,6 +169,7 @@ public class AnimController : MonoBehaviour
         b.MilkPour.GetComponent<Animator>().SetBool("Out", true);
         b.phase2 = false;
         b.pour.SetActive(false);
+        GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
     }
 
     public void BobaCompleteB()

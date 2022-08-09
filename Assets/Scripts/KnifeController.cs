@@ -37,6 +37,7 @@ public class KnifeController : MonoBehaviour
                     anim.SetTrigger("Chop1");
                     StartCoroutine("ChangePos");
                     Choppable = false;
+                    GameObject.Find("Sounds_KnifeCut").GetComponent<AudioSource>().Play();
                 }
             }
             else
@@ -59,17 +60,19 @@ public class KnifeController : MonoBehaviour
                     if(touch.phase == TouchPhase.Moved)
                     {
                         SlideSpeed = Time.deltaTime * 5f;
+                        GameObject.Find("Sounds_KnifeSlide").GetComponent<AudioSource>().UnPause();
                     }
                     else
                     {
                         SlideSpeed = 0;
                     }
                 }
-/*                else
+                else
                 {
-                    SlideSpeed = 0;
+                    //SlideSpeed = 0;
+                    GameObject.Find("Sounds_KnifeSlide").GetComponent<AudioSource>().Pause();
                 }
-*/
+
                 SlidePos.localPosition = new Vector3(Mathf.Lerp(SlidePos.localPosition.x, 0.892f, SlideSpeed), SlidePos.localPosition.y, SlidePos.localPosition.z);
             }
         }
