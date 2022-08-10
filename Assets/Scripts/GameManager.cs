@@ -47,8 +47,8 @@ public class GameManager : MonoBehaviour
         TTPCore.Setup();
         // Your code here
         Dictionary<string, object> parameters = new Dictionary<string, object>();
-        parameters.Add("missionName","First Level");
-        TTPGameProgression.FirebaseEvents.MissionStarted(1, parameters);
+        parameters.Add(transform.parent.name, PlayerPrefs.GetInt("Level", 1).ToString());
+        TTPGameProgression.FirebaseEvents.MissionStarted(PlayerPrefs.GetInt("Level", 1), parameters);
     }
 
     // Update is called once per frame

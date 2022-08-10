@@ -80,6 +80,7 @@ public class AnimController : MonoBehaviour
         g.Pos += 1;
         //Instantiate(Customer1, g.CharPos[0], Quaternion.identity);
         PlayerPrefs.SetInt("LevelNum", PlayerPrefs.GetInt("LevelNum") + 1);
+        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level", 1) + 1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -125,6 +126,7 @@ public class AnimController : MonoBehaviour
 
     public void TurnIntoPowderB()
     {
+        GameObject.Find("Sounds_CoffeeGrinding").GetComponent<AudioSource>().Pause();
         CoffeeController c = GameObject.Find("CoffeeController").GetComponent<CoffeeController>();
         c.phase0_5 = false;
         GetComponent<Animator>().speed = 1;
@@ -310,6 +312,16 @@ public class AnimController : MonoBehaviour
     public void PlayIdle()
     {
         GetComponent<Animator>().Play("Idle");
+    }
+
+    public void StopPowderSound()
+    {
+        GameObject.Find("Sounds_PowderPour").GetComponent<AudioSource>().Pause();
+    }
+
+    public void StopWaterSound()
+    {
+        GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Obi;
 using PaintIn3D;
+using Tabtale.TTPlugins;
 
 public class ButtonController : MonoBehaviour
 {
@@ -110,6 +111,9 @@ public class ButtonController : MonoBehaviour
             g.SetActive(false);
         }
         InstantiateObjs[CurrentFlavor].SetActive(true);
+        ObjPouring o = InstantiateObjs[CurrentFlavor].GetComponent<ObjPouring>();
+        if(o != null)
+            o.Invoke("StartPouring", 0.1f);
     }
 
     public void FlavorSelection1()
@@ -217,6 +221,10 @@ public class ButtonController : MonoBehaviour
         GameManager g = GameObject.Find("GameManager").GetComponent<GameManager>();
         SoundManager s = FindObjectOfType<SoundManager>();
         s.StopAllSounds();
+
+        Dictionary<string, object> parameters = new Dictionary<string, object>();
+        parameters.Add(transform.parent.name, PlayerPrefs.GetInt("Level", 1).ToString());
+        TTPGameProgression.FirebaseEvents.MissionComplete(parameters);
 
         if (g.isExLevel == true)
         {

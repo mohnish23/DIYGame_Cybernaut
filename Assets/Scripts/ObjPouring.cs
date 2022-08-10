@@ -15,7 +15,7 @@ public class ObjPouring : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Pour());
+        //StartCoroutine(Pour());
         SpawnPoint = transform.Find("SpawnPoint");
         GameObject.Find("Instructions").GetComponent<Animator>().Play("InstructionInfinity");
         FindObjectOfType<IceCubeController>().enabled = false;
@@ -44,6 +44,11 @@ public class ObjPouring : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -0.3f, 0.38f),
             transform.position.y,
             Mathf.Clamp(transform.position.z, 0.5f, 1.14f));
+    }
+
+    public void StartPouring()
+    {
+        StartCoroutine(Pour());
     }
 
     public IEnumerator Pour()
