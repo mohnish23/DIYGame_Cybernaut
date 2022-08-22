@@ -47,6 +47,7 @@ public class CoffeeController : MonoBehaviour
     public bool phaseD1;
 
     public bool LatteArtUnlocked;
+    public bool FrothingUnlocked;
 
     public Animator InstructionAnim;
 
@@ -129,7 +130,6 @@ public class CoffeeController : MonoBehaviour
         }
         else if(phaseC1 == true)
         {
-            InstructionAnim.Play("InstructionDragDown");
             Animator WaterAnim = WaterPouring2.GetComponent<Animator>();
             CupAnim.gameObject.SetActive(true);
             if (canControl == true)
@@ -143,6 +143,7 @@ public class CoffeeController : MonoBehaviour
                 }
                 else
                 {
+                    InstructionAnim.Play("InstructionDragDown");
                     CupAnim.speed = 0;
                     WaterAnim.speed = 0;
                     pour.SetActive(false);
@@ -156,10 +157,15 @@ public class CoffeeController : MonoBehaviour
                     CoffeeNextBtn.SetActive(true);*/
                 WaterPouring2.SetActive(false);
                 pour.SetActive(false);
-                phaseC1 = false;
+                canControl = false;
+                CupAnim.speed = 0;
+                WaterAnim.speed = 0;
+                InstructionAnim.Play("Idle");
                 Camera.main.GetComponent<Animator>().SetBool("CamAnim1", true);
-                Invoke("CoffeeNextButton", 0.2f);
+                FindObjectOfType<ButtonController>().CoffeeStepMenu.SetActive(true);
+                //Invoke("CoffeeNextButton", 0.2f);
                 GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
+                //phaseC1 = false;
             }
         }
         else if (phaseC == true)
@@ -302,6 +308,10 @@ public class CoffeeController : MonoBehaviour
             pour.SetActive(false);
             CupAnim.gameObject.SetActive(false);
             CupAnim2.gameObject.SetActive(true);
+            if(FrothingUnlocked == true)
+            {
+                            CupAnim2.Play("CoffeeCupFill3");
+            }
             MilkPour.SetActive(true);
             Camera.main.GetComponent<Animator>().SetBool("CamAnim2", true);
             if (canControl == true)
@@ -432,7 +442,15 @@ public class CoffeeController : MonoBehaviour
     public void CoffeeNextButton()
     {
         phase1 = false;
-        if(LatteArtUnlocked == true)
+        if(FrothingUnlocked == true)
+        {
+            ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
+            CupAnim.speed = 0;
+            pour2.SetActive(false);
+            phase2 = true;
+            canControl = true;
+        }
+        else if(LatteArtUnlocked == true)
         {
             InstructionAnim.Play("Idle");
             ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();

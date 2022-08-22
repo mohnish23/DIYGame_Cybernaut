@@ -24,6 +24,7 @@ public class ButtonController : MonoBehaviour
     public GameObject IcingMenu;
     public GameObject SprinkleMenu;
     public GameObject SleeveMenu;
+    public GameObject CoffeeStepMenu;
     public GameObject NextButton0;
     public GameObject NextButton1;
     public GameObject NextButton2;

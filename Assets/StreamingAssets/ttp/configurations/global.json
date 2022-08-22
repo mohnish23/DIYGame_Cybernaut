@@ -7,7 +7,7 @@
   "appId": "",
   "bundleId": "com.cybernautgames.cafediy",
   "testMode": false,
-  "askForTracking": false,
+  "askForTracking": true,
   "isAdMob": true,
   "appBuildConfig": {
     "admob": {

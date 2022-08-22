@@ -46,9 +46,6 @@ public class GameManager : MonoBehaviour
         // Initialize CLIK Plugin
         TTPCore.Setup();
         // Your code here
-        Dictionary<string, object> parameters = new Dictionary<string, object>();
-        parameters.Add(transform.parent.name, PlayerPrefs.GetInt("Level", 1).ToString());
-        TTPGameProgression.FirebaseEvents.MissionStarted(PlayerPrefs.GetInt("Level", 1), parameters);
     }
 
     // Update is called once per frame
@@ -69,6 +66,9 @@ public class GameManager : MonoBehaviour
         Camera.main.GetComponent<Animator>().SetBool("CamAnim0", true);
         ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
         b.DrinkMenu.SetActive(true);
+        Dictionary<string, object> parameters = new Dictionary<string, object>();
+        parameters.Add(transform.parent.name, PlayerPrefs.GetInt("Level", 1).ToString());
+        TTPGameProgression.FirebaseEvents.MissionStarted(PlayerPrefs.GetInt("Level", 1), parameters);
     }
 
     public void StartButtonCoffee()
@@ -77,6 +77,9 @@ public class GameManager : MonoBehaviour
         StartMenu.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("CamAnim0", true);
         GameObject.Find("CoffeeController").GetComponent<CoffeeController>().canControl = true;
+        Dictionary<string, object> parameters = new Dictionary<string, object>();
+        parameters.Add(transform.parent.name, PlayerPrefs.GetInt("Level", 1).ToString());
+        TTPGameProgression.FirebaseEvents.MissionStarted(PlayerPrefs.GetInt("Level", 1), parameters);
     }
 
     void StartInstruction()
@@ -89,6 +92,9 @@ public class GameManager : MonoBehaviour
         StartMenu.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("CamAnim0", true);
         GameObject.Find("BobaController").GetComponent<BobaController>().canControl = true;
+        Dictionary<string, object> parameters = new Dictionary<string, object>();
+        parameters.Add(transform.parent.name, PlayerPrefs.GetInt("Level", 1).ToString());
+        TTPGameProgression.FirebaseEvents.MissionStarted(PlayerPrefs.GetInt("Level", 1), parameters);
     }
 
     public IEnumerator StartMenuDelay()

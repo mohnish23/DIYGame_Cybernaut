@@ -18,7 +18,7 @@ MonoBehaviour:
   interstitials: 0
   rvs: 0
   crashTool: 1
-  privacySettings: 0
+  privacySettings: 1
   rateUs: 0
   openAds: 0
   rvInter: 0

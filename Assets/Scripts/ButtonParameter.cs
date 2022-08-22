@@ -33,6 +33,28 @@ public class ButtonParameter : MonoBehaviour
         b.NextButton3.SetActive(true);
     }
 
+    public void SelectionLatteArt()
+    {
+        CoffeeController c = FindObjectOfType<CoffeeController>();
+        c.LatteArtUnlocked = true;
+        SelectionNext();
+    }
+
+    public void SelectionFrothing()
+    {
+        CoffeeController c = FindObjectOfType<CoffeeController>();
+        c.FrothingUnlocked = true;
+        SelectionNext();
+    }
+
+    public void SelectionNext()
+    {
+        CoffeeController c = FindObjectOfType<CoffeeController>();
+        c.phaseC1 = false;
+        c.Invoke("CoffeeNextButton", 0.2f);
+        transform.parent.gameObject.SetActive(false);
+    }
+
     public void FlavorNextInit()
     {
         if(FindObjectOfType<BobaController>() != null)
