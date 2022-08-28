@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class AnimController : MonoBehaviour
@@ -97,7 +98,8 @@ public class AnimController : MonoBehaviour
         GameManager g = GameObject.Find("GameManager").GetComponent<GameManager>();
         if(g.UnlockItem == null)
         {
-            CustomerCycleComplete();
+            //CustomerCycleComplete();
+            g.UnlockScreen.SetActive(true);
         }
         else
         {
@@ -296,7 +298,8 @@ public class AnimController : MonoBehaviour
         GetComponent<Animator>().speed = 0;
         CoffeeController c = FindObjectOfType<CoffeeController>();
         c.phaseD1 = false;
-        c.CoffeeNextButton();
+        InstructionAnim.Play("Idle");
+        //c.CoffeeNextButton();
     }
 
     public void EnableCup()
@@ -322,6 +325,27 @@ public class AnimController : MonoBehaviour
     public void StopWaterSound()
     {
         GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
+    }
+
+    public void AddCoins()
+    {
+        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", 100) + 50);
+        Text CoinTxt = GameObject.Find("CoinAmt").GetComponent<Text>();
+        CoinTxt.text = PlayerPrefs.GetInt("Coins", 100).ToString();
+    }
+
+    public void WhippedCreamStarted()
+    {
+        FindObjectOfType<ButtonController>().IcingMenu.SetActive(true);
+    }
+
+    public void WhippedCreamComplete()
+    {
+        GetComponent<Animator>().enabled = false;
+        GameObject.Find("SprinkleBase").GetComponent<BoxCollider>().enabled = true;
+        GameObject.Find("SprinkleBase").transform.GetChild(0).gameObject.SetActive(true);
+        ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
+        b.SprinkleMenu.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)

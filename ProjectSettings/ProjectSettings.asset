@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 22
+  serializedVersion: 23
   productGUID: 8836639b427c1fc4382cb4ae6b8819d2
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -68,6 +68,12 @@ PlayerSettings:
   androidRenderOutsideSafeArea: 1
   androidUseSwappy: 1
   androidBlitType: 0
+  androidResizableWindow: 0
+  androidDefaultWindowWidth: 1920
+  androidDefaultWindowHeight: 1080
+  androidMinimumWindowWidth: 400
+  androidMinimumWindowHeight: 300
+  androidFullscreenMode: 1
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
   runInBackground: 1
@@ -139,11 +145,13 @@ PlayerSettings:
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
+  enableOpenGLProfilerGPURecorders: 1
   useHDRDisplay: 0
   D3DHDRBitDepth: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
+  resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
@@ -154,7 +162,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 30
   AndroidPreferredInstallLocation: 1
@@ -211,6 +219,7 @@ PlayerSettings:
   iOSLaunchScreeniPadCustomStoryboardPath: 
   iOSDeviceRequirements: []
   iOSURLSchemes: []
+  macOSURLSchemes: []
   iOSBackgroundModes: 0
   iOSMetalForceHardShadows: 0
   metalEditorSupport: 1
@@ -230,7 +239,7 @@ PlayerSettings:
   clonedFromGUID: c0afd0d1d80e3634a9dac47e8a0426ea
   templatePackageId: com.unity.template.3d@5.0.4
   templateDefaultScene: Assets/Scenes/SampleScene.unity
-  useCustomMainManifest: 1
+  useCustomMainManifest: 0
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 1
   useCustomLauncherGradleManifest: 1
@@ -413,7 +422,7 @@ PlayerSettings:
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer
     m_APIs: 150000000b000000
-    m_Automatic: 0
+    m_Automatic: 1
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
     m_Automatic: 1
@@ -440,6 +449,7 @@ PlayerSettings:
   m_BuildTargetGroupLightmapEncodingQuality: []
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetNormalMapEncoding: []
+  m_BuildTargetDefaultTextureCompressionFormat: []
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -449,6 +459,7 @@ PlayerSettings:
   cameraUsageDescription: 
   locationUsageDescription: 
   microphoneUsageDescription: 
+  bluetoothUsageDescription: 
   switchNMETAOverride: 
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144
@@ -588,7 +599,9 @@ PlayerSettings:
   switchPlayerConnectionEnabled: 1
   switchUseNewStyleFilepaths: 0
   switchUseMicroSleepForYield: 1
+  switchEnableRamDiskSupport: 0
   switchMicroSleepForYieldTime: 25
+  switchRamDiskSpaceSize: 12
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -659,7 +672,6 @@ PlayerSettings:
   ps4videoRecordingFeaturesUsed: 0
   ps4contentSearchFeaturesUsed: 0
   ps4CompatibilityPS5: 0
-  ps4AllowPS5Detection: 0
   ps4GPU800MHz: 1
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
@@ -685,9 +697,9 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: OBI_ONI_SUPPORTED
-    4: OBI_ONI_SUPPORTED;TTP_REWARDED_INTERSTITIALS;TTP_PRIVACY_SETTINGS;TTP_APPSFLYER;TTP_REWARDED_ADS;TTP_PROMOTION;TTP_INTERSTITIALS;TTP_ANALYTICS;TTP_GAMEPROGRESSION;TTP_RATEUS;TTP_BANNERS;TTP_POPUPMGR;TTP_CRASHTOOL;TTP_OPENADS
-    7: OBI_ONI_SUPPORTED;TTP_REWARDED_INTERSTITIALS;TTP_PRIVACY_SETTINGS;TTP_APPSFLYER;TTP_REWARDED_ADS;TTP_PROMOTION;TTP_INTERSTITIALS;TTP_ANALYTICS;TTP_GAMEPROGRESSION;TTP_RATEUS;TTP_BANNERS;TTP_POPUPMGR;TTP_CRASHTOOL;TTP_OPENADS
+    Android: OBI_ONI_SUPPORTED;TTP_REWARDED_INTERSTITIALS;TTP_PRIVACY_SETTINGS;TTP_APPSFLYER;TTP_REWARDED_ADS;TTP_PROMOTION;TTP_INTERSTITIALS;TTP_ANALYTICS;TTP_GAMEPROGRESSION;TTP_RATEUS;TTP_BANNERS;TTP_POPUPMGR;TTP_CRASHTOOL;TTP_OPENADS
+    Standalone: OBI_ONI_SUPPORTED
+    iPhone: OBI_ONI_SUPPORTED;TTP_REWARDED_INTERSTITIALS;TTP_PRIVACY_SETTINGS;TTP_APPSFLYER;TTP_REWARDED_ADS;TTP_PROMOTION;TTP_INTERSTITIALS;TTP_ANALYTICS;TTP_GAMEPROGRESSION;TTP_RATEUS;TTP_BANNERS;TTP_POPUPMGR;TTP_CRASHTOOL;TTP_OPENADS
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -733,6 +745,7 @@ PlayerSettings:
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
+  vcxProjDefaultLanguage: 
   XboxOneProductId: 
   XboxOneUpdateKey: 
   XboxOneSandboxId: 
@@ -790,4 +803,6 @@ PlayerSettings:
   organizationId: cybernaut-games
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
+  playerDataPath: 
+  forceSRGBBlit: 1
   virtualTexturingSupportEnabled: 0

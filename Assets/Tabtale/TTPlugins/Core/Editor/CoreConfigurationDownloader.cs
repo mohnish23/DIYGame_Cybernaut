@@ -27,34 +27,6 @@ namespace Tabtale.TTPlugins
         {
             TTPMenu.OnDownloadConfigurationCommand += DownloadConfiguration;
         }
-
-        private static void AndoridWebDebug()
-        {
-            Debug.Log("CoreConfigurationDownloader:: AndoridWebDebug");
-            if (TTPAndroidWebDebugPostProcess.IsAndroidWebDebugEnabled())
-            {
-                Debug.Log("CoreConfigurationDownloader:: AndoridWebDebug 2");
-                var pathToAndroidManifest = "Assets/Plugins/Android/AndroidManifest.xml";
-                if (File.Exists(pathToAndroidManifest))
-                {
-                    Debug.Log("CoreConfigurationDownloader:: AndoridWebDebug 3");
-                    var xmlDocument = new XmlDocument();
-                    xmlDocument.Load(pathToAndroidManifest);
-                    var node = xmlDocument.DocumentElement;
-                    var applicationNode = node.SelectSingleNode("application");
-                    Debug.Log(applicationNode.Name);
-                    var netSecConfigAttr = xmlDocument.CreateAttribute("andorid", "networkSecurityConfig","http://schemas.android.com/apk/res/android");
-                    netSecConfigAttr.Value = "@xml/network_security_config";
-                    var andoridDebugAttr = xmlDocument.CreateAttribute("andorid", "debuggable","http://schemas.android.com/apk/res/android");
-                    andoridDebugAttr.Value = "true";
-                    if (applicationNode.Attributes == null) return;
-                    Debug.Log("CoreConfigurationDownloader:: AndoridWebDebug 4");
-                    applicationNode.Attributes.Append(netSecConfigAttr);
-                    applicationNode.Attributes.Append(andoridDebugAttr);
-                    xmlDocument.Save(pathToAndroidManifest);
-                }
-            }
-        }
         
         private static void DownloadConfiguration(string domain)
         {
@@ -104,7 +76,6 @@ namespace Tabtale.TTPlugins
                 }
             }
 #endif
-            AndoridWebDebug();
         }
         
     }

@@ -128,6 +128,15 @@ extern "C" {
         return strdup("");
     }
     
+    void ttpSetFirebaseInstanceId(const char* firebaseInstanceId)
+    {
+        TTPServiceManager *serviceManager = [TTPUnityServiceManager sharedInstance];
+        id<TTPIanalytics> analyticsService = [serviceManager get:@protocol(TTPIanalytics)];
+        if(analyticsService != nil){
+            [analyticsService setFirebaseInstanceId:[[NSString alloc] initWithUTF8String:firebaseInstanceId]];
+        }
+    }
+    
     const char * ttpGetCurrentConfig()
     {
         TTPServiceManager *serviceManager = [TTPUnityServiceManager sharedInstance];
@@ -166,8 +175,26 @@ extern "C" {
         }
     }
 
+    const char * ttpGetAdditionalParams()
+    {
+        TTPServiceManager *serviceManager = [TTPUnityServiceManager sharedInstance];
+        id<TTPIanalytics> analyticsService = [serviceManager get:@protocol(TTPIanalytics)];
+        if(analyticsService != nil){
+            NSError *error;
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[analyticsService getAdditionalEventParams]
+                                                               options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                                 error:&error];
+
+            if (!jsonData) {
+                NSLog(@"ttpGetAdditionalParams error: %@", error);
+            } else {
+                NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+                return strdup([jsonString UTF8String]);
+            }
+        }
+        return strdup("");
+    }
+    
 }
-
-
 
 @end

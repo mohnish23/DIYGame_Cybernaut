@@ -22,6 +22,7 @@ public class UnlockScript : MonoBehaviour
         if(EndNum != 0)
         {
             DescText.text = EndNum * 100 + "% " + "LEFT";
+            BgRays.SetActive(false);
         }
     }
 

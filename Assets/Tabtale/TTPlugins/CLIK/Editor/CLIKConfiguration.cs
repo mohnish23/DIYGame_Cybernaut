@@ -1,5 +1,3 @@
-
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using Google;
+using GooglePlayServices;
+using Google;
 using Tabtale.TTPlugins;
+using TTPlugins.DependenciesFile;
+using TTPlugins.PomFile;
 using UnityEditor;
 using UnityEditor.Android;
 using UnityEditor.AnimatedValues;
@@ -20,6 +22,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using Object = System.Object;
+using System.Text.RegularExpressions;
 
 // ReSharper disable InconsistentNaming
 
@@ -41,6 +44,7 @@ public class CLIKConfiguration : EditorWindow
         public const string CONFIG_FN_RATEUS = "rateUs";
         public const string CONFIG_FN_OPENADS = "openads";
         public const string CONFIG_FN_PROMOTION = "promotion";
+        public const string CONFIG_FN_FACEBOOK = "facebook";
         
         public const string PACAKAGES_ANALYTICS = "analytics";
         public const string PACAKAGES_APPSFLYER = "appsflyer";
@@ -56,10 +60,11 @@ public class CLIKConfiguration : EditorWindow
         public const string PACAKAGES_RATEUS = "rateus";
         public const string PACAKAGES_OPENADS = "openads";
         public const string PACAKAGES_PROMOTION = "promotion";
-        
+
         public const string CONFIG_KEY_INCLUDED = "included";
-        
+
         public const string CONFIG_KEY_FIREBASE = "firebase";
+        public const string CONFIG_KEY_FIREBASE_ECHO_MODE = "firebaseEchoMode";
         public const string CONFIG_KEY_FIREBASE_GOOGLE_ID = "googleAppId";
         public const string CONFIG_KEY_FIREBASE_SENDER_ID = "senderId";
         public const string CONFIG_KEY_FIREBASE_CLIENT_ID = "clientId";
@@ -69,16 +74,16 @@ public class CLIKConfiguration : EditorWindow
         public const string CONFIG_KEY_FIREBASE_PROJECT_ID = "projectId";
 
         public const string CONFIG_KEY_APPSFLYER = "appsFlyerKey";
-        
+
         public const string CONFIG_KEY_HOCKEYAPP = "hockeyAppKey";
-        
+
         public const string CONFIG_KEY_SERVER_DOMAIN = "serverDomain";
-        
+
         public const string CONFIG_KEY_BANNERS_ALIGN_TO_TOP = "alignToTop";
         public const string CONFIG_KEY_BANNERS_AD_DISPLAY_TIME = "adDisplayTime";
         public const string CONFIG_KEY_BANNERS_ADMOB_KEY = "bannersAdMobKey";
         public const string CONFIG_KEY_BANNERS_HOUSEADS_SERVER_DOMAIN = "houseAdsServerDomain";
-        
+
         public const string CONFIG_KEY_GLOBAL_BUNDLE_ID = "bundleId";
         public const string CONFIG_KEY_GLOBAL_TEST_MODE = "testMode";
         public const string CONFIG_KEY_GLOBAL_STORE = "store";
@@ -90,14 +95,14 @@ public class CLIKConfiguration : EditorWindow
         public const string CONFIG_KEY_GLOBAL_IS_ADMOB = "isAdMob";
         public const string CONFIG_KEY_GLOBAL_APPLICATION = "application";
         public const string CONFIG_KEY_GLOBAL_CONVERSION_MODEL_TYPE = "conversionModelType";
-        
-        public const string CONFIG_KEY_INTERSTITIALS= "interstitialsAdMobKey";
-        
-        public const string CONFIG_KEY_RV= "rewardedAdsAdMobKey";
+
+        public const string CONFIG_KEY_INTERSTITIALS = "interstitialsAdMobKey";
+
+        public const string CONFIG_KEY_RV = "rewardedAdsAdMobKey";
         public const string CONFIG_KEY_RV_INTER = "rewardedInterAdMobKey";
 
         public const string CONFIG_KEY_OPENADS = "appOpenAdMobKey";
-        
+
         public const string CONFIG_KEY_POPUPMGR_SESSION_TIME_TO_FIRST_POPUP = "sessionTimeToFirstPopup";
         public const string CONFIG_KEY_POPUPMGR_GAME_TIME_TO_FIRST_POPUP = "gameTimeToFirstPopup";
         public const string CONFIG_KEY_POPUPMGR_RESET_POPUP_TIMER_ON_RV = "resetPopupTimerOnRV";
@@ -105,25 +110,28 @@ public class CLIKConfiguration : EditorWindow
         public const string CONFIG_KEY_POPUPMGR_POPUP_INTERVALS_BY_SESSION = "popupsIntervalsBySession";
         public const string CONFIG_KEY_POPUPMGR_POPUP_TIME_BETWEEN_RV_AND_INTER_BY_SESSION = "timeBetweenRvAndInterBySession";
         public const string CONFIG_KEY_POPUPMGR_GAME_TIME_TO_FIRST_POPUP_BY_SESSION = "gameTimeToFirstPopupBySession";
-        public const string CONFIG_KEY_POPUPMGR_SESSION_TIME_TO_FIRST_POPUP_BY_SESSION = "sessionTimeToFirstPopupBySession";
+
+        public const string CONFIG_KEY_POPUPMGR_SESSION_TIME_TO_FIRST_POPUP_BY_SESSION =
+            "sessionTimeToFirstPopupBySession";
+
         public const string CONFIG_KEY_POPUPMGR_LEVEL_TO_FIRST_POPUP = "levelToFirstPopup";
         public const string CONFIG_KEY_POPUPMGR_FIRST_POPUP_AT_SESSION = "firstPopupAtSession";
         public const string CONFIG_KEY_POPUPMGR_INTERVALS = "popupsIntervals";
         public const string CONFIG_KEY_POPUPMGR_RESET_RV_BY_SESSION = "resetPopupTimerOnRVBySession";
         public const string CONFIG_KEY_POPUPMGR_RESET_APP_OPEN_BY_SESSION = "resetPopupTimerOnAppOpenBySession";
-        
+
         public const string CONFIG_KEY_PRIVACY_SETTINGS_CONSENT_FORM_VERSION = "consentFormVersion";
         public const string CONFIG_KEY_PRIVACY_SETTINGS_CONSENT_FORM_URL = "consentFormURL";
         public const string CONFIG_KEY_PRIVACY_SETTINGS_URL = "privacySettingsURL";
         public const string CONFIG_KEY_PRIVACY_SETTINGS_USE_TTP_POPUPS = "useTTPGDPRPopups";
-        
+
         public const string CONFIG_KEY_RATE_US_ICON_URL = "iconUrl";
         public const string CONFIG_KEY_RATE_US_COOLDOWN = "coolDown";
 
         public const string ANDROID_MANIFEST_FILE_PATH = "Assets/Plugins/Android/AndroidManifest.xml";
         public const string ANDROID_MANIFEST_FILE_PATH_BACKUP = "Assets/Plugins/Android/_AndroidManifest.xml";
         
-        public const string ANDROID_MANIFEST_RES_FILE_PATH = "Assets/Plugins/Android/AndroidConfigurations/res/values/google-services.xml";
+        public const string ANDROID_MANIFEST_RES_FILE_PATH = "Assets/Plugins/Android/AndroidConfigurations.androidlib/res/values/google-services.xml";
         public const string ANDROID_MANIFEST_RES_PATH = "//resources";
 
         public const string GOOGLE_SERVICES_JSON_PATH = "Assets/StreamingAssets/google-services.json";
@@ -143,7 +151,6 @@ public class CLIKConfiguration : EditorWindow
 #else
         public const string REQUIRED_UNITY_VERSION = "2019.3.15f1";
 #endif
-
     }
 
     static int CompareVersion()
@@ -160,6 +167,7 @@ public class CLIKConfiguration : EditorWindow
             else if (ver1 > ver2)
                 return 1;
         }
+
         return 0;
     }
 
@@ -168,19 +176,22 @@ public class CLIKConfiguration : EditorWindow
     {
         if (CompareVersion() < 0)
         {
-            Debug.LogError($"Current Unity version ({Application.unityVersion}) is lower than required ({Constants.REQUIRED_UNITY_VERSION})");
+            Debug.LogError(
+                $"Current Unity version ({Application.unityVersion}) is lower than required ({Constants.REQUIRED_UNITY_VERSION})");
         }
 
-        
+
         var firstTimeConfiguration = PlayerPrefs.GetInt(Constants.PLAYER_PREFS_KEY_FIRST_CONFIGURATION, 0);
         if (firstTimeConfiguration == 0 || !GlobalConfigFileExists())
         {
             if (!EditorUtility.DisplayDialog("CLIK Configuration", "Thanks for installing CLIK! To begin, " +
-                                                                  "please choose the zip file that was provided by your publishing manager",
+                                                                   "please choose the zip file that was provided by your publishing manager",
                 "Choose ZIP", "Cancel"))
             {
                 return;
             }
+
+            //RemoveOldFilesIfExists();
             if (!UnzipAnLoadConfiguration())
             {
                 return;
@@ -356,21 +367,27 @@ public class CLIKConfiguration : EditorWindow
         GUILayout.Label("Mode: " + (_configuration.globalConfig.testMode ? "Test" : "Production"));
         var currentId =
             PlayerSettings.GetApplicationIdentifier(isAndroid ? BuildTargetGroup.Android : BuildTargetGroup.iOS);
-        if (CompareVersion() < 0 )
-            GUILayout.Label($"Current Unity version ({Application.unityVersion}) is lower than required ({Constants.REQUIRED_UNITY_VERSION})", _redLabel);
+        if (CompareVersion() < 0)
+            GUILayout.Label(
+                $"Current Unity version ({Application.unityVersion}) is lower than required ({Constants.REQUIRED_UNITY_VERSION})",
+                _redLabel);
         if (_configuration.globalConfig.bundleId != currentId)
         {
-            GUILayout.Label("Application Id does not match Configuration Bundle Id. Current Id = " + currentId, _redLabel);
+            GUILayout.Label("Application Id does not match Configuration Bundle Id. Current Id = " + currentId,
+                _redLabel);
             if (GUILayout.Button("Change Application Id"))
             {
-                PlayerSettings.SetApplicationIdentifier(isAndroid ? BuildTargetGroup.Android : BuildTargetGroup.iOS, _configuration.globalConfig.bundleId);
+                PlayerSettings.SetApplicationIdentifier(isAndroid ? BuildTargetGroup.Android : BuildTargetGroup.iOS,
+                    _configuration.globalConfig.bundleId);
             }
         }
+
         if ((isAndroid && _configuration.globalConfig.store != "google") ||
             (!isAndroid && _configuration.globalConfig.store != "apple"))
         {
-            GUILayout.Label("Configuration does not match current build target!" ,_redLabel);
+            GUILayout.Label("Configuration does not match current build target!", _redLabel);
         }
+
         if (_configuration.popUpMgrConfig.included)
         {
             GUILayout.Label ("Pop Up Manager", EditorStyles.boldLabel);
@@ -384,14 +401,28 @@ public class CLIKConfiguration : EditorWindow
             _configuration.popUpMgrConfig.resetPopupTimerOnAppOpen = EditorGUILayout.Toggle("Reset timer on App Open", _configuration.popUpMgrConfig.resetPopupTimerOnAppOpen);
             EditorGUILayout.Separator();
         }
-        IndicateConfiguration("Analytics", _configuration.analyticsConfig.IsValid(), _configuration.analyticsConfig.included);
-        IndicateConfiguration("Appsflyer", _configuration.appsflyerConfig.IsValid(), _configuration.appsflyerConfig.included);
-        IndicateConfiguration("Crash Tool", _configuration.crashToolConfig.IsValid(), _configuration.crashToolConfig.included);
-        IndicateConfiguration("Banners", _configuration.globalConfig.IsValid() && _configuration.bannersConfig.IsValid(), _configuration.bannersConfig.included);
-        IndicateConfiguration("Interstitials", _configuration.globalConfig.IsValid() &&_configuration.interstitialsConfig.IsValid(), _configuration.interstitialsConfig.included);
-        IndicateConfiguration("Rewarded Ads", _configuration.globalConfig.IsValid() && _configuration.rewardedAdsConfig.IsValid(), _configuration.rewardedAdsConfig.included);
-        IndicateConfiguration("Rewarded Interstitials", _configuration.globalConfig.IsValid() && _configuration.rewardedInterConfig.IsValid(), _configuration.rewardedInterConfig.included);
-        IndicateConfiguration("Open Ads", _configuration.globalConfig.IsValid() && _configuration.openAdsConfig.IsValid(), _configuration.openAdsConfig.included);
+
+        IndicateConfiguration("Analytics", _configuration.analyticsConfig.IsValid(),
+            _configuration.analyticsConfig.included);
+        IndicateConfiguration("Appsflyer", _configuration.appsflyerConfig.IsValid(),
+            _configuration.appsflyerConfig.included);
+        IndicateConfiguration("Crash Tool", _configuration.crashToolConfig.IsValid(),
+            _configuration.crashToolConfig.included);
+        IndicateConfiguration("Banners",
+            _configuration.globalConfig.IsValid() && _configuration.bannersConfig.IsValid(),
+            _configuration.bannersConfig.included);
+        IndicateConfiguration("Interstitials",
+            _configuration.globalConfig.IsValid() && _configuration.interstitialsConfig.IsValid(),
+            _configuration.interstitialsConfig.included);
+        IndicateConfiguration("Rewarded Ads",
+            _configuration.globalConfig.IsValid() && _configuration.rewardedAdsConfig.IsValid(),
+            _configuration.rewardedAdsConfig.included);
+        IndicateConfiguration("Rewarded Interstitials",
+            _configuration.globalConfig.IsValid() && _configuration.rewardedInterConfig.IsValid(),
+            _configuration.rewardedInterConfig.included);
+        IndicateConfiguration("Open Ads",
+            _configuration.globalConfig.IsValid() && _configuration.openAdsConfig.IsValid(),
+            _configuration.openAdsConfig.included);
         IndicateConfiguration("Stand", true, _configuration.promotionConfig.included);
         IndicateConfiguration("Rate Us", true, _configuration.rateUsConfig.included);
         IndicateConfiguration("Privacy Settings", true, _configuration.privacySettingsConfig.included);
@@ -402,10 +433,13 @@ public class CLIKConfiguration : EditorWindow
         {
             UnzipAnLoadConfiguration();
         }
-        if (_configuration != null && _configuration.popUpMgrConfig.included && GUILayout.Button("Save Pop Up Mgr Configuration"))
+
+        if (_configuration != null && _configuration.popUpMgrConfig.included &&
+            GUILayout.Button("Save Pop Up Mgr Configuration"))
         {
             _configuration.SaveConfigurations();
         }
+
         GUILayout.Space(10);
     }
 
@@ -422,6 +456,35 @@ public class CLIKConfiguration : EditorWindow
         string GetServiceName();
         void LoadFromFile();
     }
+    
+    [Serializable]
+    private class FacebookConfig : IConfig
+    {
+        public bool included;
+        public string fbAppID;
+        public string fbAppName;
+        public string fbClientID;
+        
+        public Dictionary<string, object> ToDict()
+        {
+            return new Dictionary<string, object>()
+            {
+                {"fbAppID", fbAppID},
+                {"fbAppName", fbAppName},
+                {"fbClientID", fbClientID}
+            };
+        }
+
+        public string GetServiceName()
+        {
+            return Constants.CONFIG_FN_FACEBOOK;
+        }
+
+        public void LoadFromFile()
+        {
+            LoadConfigFromFile(this);
+        }
+    }
 
     private class GlobalConfig : IConfig
     {
@@ -431,7 +494,7 @@ public class CLIKConfiguration : EditorWindow
         public string store;
         public string conversionModelType = "A";
         public bool isAdMob = true;
-        
+
         public Dictionary<string, object> ToDict()
         {
             return new Dictionary<string, object>()
@@ -444,13 +507,16 @@ public class CLIKConfiguration : EditorWindow
                 {Constants.CONFIG_KEY_GLOBAL_AUDIENCE_MODE, "non-children"},
                 {Constants.CONFIG_KEY_GLOBAL_ORIENTATION, "portrait"},
                 {Constants.CONFIG_KEY_GLOBAL_CONVERSION_MODEL_TYPE, conversionModelType},
-                {Constants.CONFIG_KEY_GLOBAL_APPBUILDCONFIG, new Dictionary<string, object>()
                 {
-                    {Constants.CONFIG_KEY_GLOBAL_ADMOB, new Dictionary<string, object>()
+                    Constants.CONFIG_KEY_GLOBAL_APPBUILDCONFIG, new Dictionary<string, object>()
+                    {
                         {
-                            {Constants.CONFIG_KEY_GLOBAL_APPLICATION, admobAppId}
+                            Constants.CONFIG_KEY_GLOBAL_ADMOB, new Dictionary<string, object>()
+                            {
+                                {Constants.CONFIG_KEY_GLOBAL_APPLICATION, admobAppId}
+                            }
                         }
-                    }}
+                    }
                 }
             };
         }
@@ -459,7 +525,7 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_GLOBAL;
         }
-        
+
 
         public void LoadFromFile()
         {
@@ -471,7 +537,8 @@ public class CLIKConfiguration : EditorWindow
 #if UNITY_IOS
             if (!string.IsNullOrEmpty(conversionModelType))
             {
-                var conversionRulesUrl = "http://promo-images.ttpsdk.info/conversionJS/"+conversionModelType+"/conversion.js";
+                var conversionRulesUrl =
+ "http://promo-images.ttpsdk.info/conversionJS/"+conversionModelType+"/conversion.js";
                 TTPEditorUtils.DownloadStringToFile(conversionRulesUrl, "Assets/StreamingAssets/ttp/conversion/conversion.js");
             }
 #endif
@@ -505,20 +572,26 @@ public class CLIKConfiguration : EditorWindow
                     {
                         testMode = tm;
                     }
+
                     if (dict.ContainsKey(Constants.CONFIG_KEY_GLOBAL_IS_ADMOB) &&
-                       dict[Constants.CONFIG_KEY_GLOBAL_IS_ADMOB] is bool is_admob)
+                        dict[Constants.CONFIG_KEY_GLOBAL_IS_ADMOB] is bool is_admob)
                     {
                         isAdMob = is_admob;
                     }
+
                     if (dict.ContainsKey(Constants.CONFIG_KEY_GLOBAL_APPBUILDCONFIG) &&
-                        dict[Constants.CONFIG_KEY_GLOBAL_APPBUILDCONFIG] is Dictionary<string, object> appBuildConfigDict &&
-                        appBuildConfigDict.ContainsKey(Constants.CONFIG_KEY_GLOBAL_ADMOB) && appBuildConfigDict[Constants.CONFIG_KEY_GLOBAL_ADMOB] is Dictionary<string, object> admobDict &&
-                        admobDict.ContainsKey(Constants.CONFIG_KEY_GLOBAL_APPLICATION) && admobDict[Constants.CONFIG_KEY_GLOBAL_APPLICATION] is string applicationStr)
+                        dict[Constants.CONFIG_KEY_GLOBAL_APPBUILDCONFIG] is Dictionary<string, object>
+                            appBuildConfigDict &&
+                        appBuildConfigDict.ContainsKey(Constants.CONFIG_KEY_GLOBAL_ADMOB) &&
+                        appBuildConfigDict[Constants.CONFIG_KEY_GLOBAL_ADMOB] is Dictionary<string, object> admobDict &&
+                        admobDict.ContainsKey(Constants.CONFIG_KEY_GLOBAL_APPLICATION) &&
+                        admobDict[Constants.CONFIG_KEY_GLOBAL_APPLICATION] is string applicationStr)
                     {
                         admobAppId = applicationStr;
                     }
 
-                    if (dict.ContainsKey(Constants.CONFIG_KEY_GLOBAL_CONVERSION_MODEL_TYPE) && dict[Constants.CONFIG_KEY_GLOBAL_CONVERSION_MODEL_TYPE] is string conversionModelTypeVal)
+                    if (dict.ContainsKey(Constants.CONFIG_KEY_GLOBAL_CONVERSION_MODEL_TYPE) &&
+                        dict[Constants.CONFIG_KEY_GLOBAL_CONVERSION_MODEL_TYPE] is string conversionModelTypeVal)
                     {
                         conversionModelType = conversionModelTypeVal;
                     }
@@ -547,7 +620,7 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_APPSFLYER;
         }
-        
+
         public void LoadFromFile()
         {
             LoadConfigFromFile(this);
@@ -559,7 +632,7 @@ public class CLIKConfiguration : EditorWindow
             return _isValid;
         }
     }
-    
+
     [Serializable]
     private class CrashToolConfig : IConfig
     {
@@ -580,8 +653,8 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_CRASHTOOL;
         }
-        
-        
+
+
         public void LoadFromFile()
         {
             LoadConfigFromFile(this);
@@ -593,7 +666,7 @@ public class CLIKConfiguration : EditorWindow
             return _isValid;
         }
     }
-    
+
     [Serializable]
     private class ElephantConfig : IConfig
     {
@@ -612,13 +685,13 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_ELEPHANT;
         }
-        
+
         public void LoadFromFile()
         {
             LoadConfigFromFile(this);
         }
     }
-    
+
     private class PopUpMgrConfig : IConfig
     {
         public bool included;
@@ -630,11 +703,12 @@ public class CLIKConfiguration : EditorWindow
         public bool resetPopupTimerOnAppOpen;
         public long popupsInterval;
         public long timeBetweenRvAndInter;
-        private Dictionary<string,object> popupsIntervalsBySession;
-        private Dictionary<string,object> gameTimeToFirstPopupBySession;
-        private Dictionary<string,object> sessionTimeToFirstPopupBySession;
-        private Dictionary<string,object> resetPopupTimerOnRVBySession;
-        private Dictionary<string,object> resetPopupTimerOnAppOpenBySession;
+        private Dictionary<string, object> popupsIntervalsBySession;
+        private Dictionary<string, object> gameTimeToFirstPopupBySession;
+        private Dictionary<string, object> sessionTimeToFirstPopupBySession;
+        private Dictionary<string, object> resetPopupTimerOnRVBySession;
+        private Dictionary<string, object> resetPopupTimerOnAppOpenBySession;
+
         public Dictionary<string, object> ToDict()
         {
             var dic = new Dictionary<string, object>()
@@ -655,14 +729,13 @@ public class CLIKConfiguration : EditorWindow
                 {Constants.CONFIG_KEY_POPUPMGR_RESET_APP_OPEN_BY_SESSION, new Dictionary<string,bool>(){ {"1", resetPopupTimerOnAppOpen}}},
             };
             return dic;
-
         }
 
         public string GetServiceName()
         {
             return Constants.CONFIG_FN_POPUPSMGR;
         }
-        
+
         public void LoadFromFile()
         {
             if (TryReadConfigFile(GetServiceName(), out var json))
@@ -682,14 +755,15 @@ public class CLIKConfiguration : EditorWindow
                     return innerDict["1"];
                 }
             }
+
             return null;
         }
-        
+
         private int GetInnerInt(Dictionary<string, object> dict, string key)
         {
             return Convert.ToInt32(GetInnerObject(dict, key));
         }
-        
+
         private int GetInnerIntFromArray(Dictionary<string, object> dict, string key)
         {
             if (GetInnerObject(dict, key) is List<object> arr)
@@ -701,12 +775,12 @@ public class CLIKConfiguration : EditorWindow
                 return 0;
             }
         }
-        
+
         private bool GetInnerBool(Dictionary<string, object> dict, string key)
         {
             return Convert.ToBoolean(GetInnerObject(dict, key));
         }
-        
+
         private void Deserialize(string json)
         {
             if (!string.IsNullOrEmpty(json))
@@ -721,14 +795,19 @@ public class CLIKConfiguration : EditorWindow
                      sessionTimeToFirstPopup = GetInnerInt(dict,
                          Constants.CONFIG_KEY_POPUPMGR_SESSION_TIME_TO_FIRST_POPUP_BY_SESSION);
                     resetPopupTimerOnRV = GetInnerBool(dict, Constants.CONFIG_KEY_POPUPMGR_RESET_RV_BY_SESSION);
-                    resetPopupTimerOnAppOpen = GetInnerBool(dict, Constants.CONFIG_KEY_POPUPMGR_RESET_APP_OPEN_BY_SESSION);
-                    levelToFirstPopup = dict.ContainsKey(Constants.CONFIG_KEY_POPUPMGR_LEVEL_TO_FIRST_POPUP) ? (long)dict[Constants.CONFIG_KEY_POPUPMGR_LEVEL_TO_FIRST_POPUP] : 0;
-                    firstPopupAtSession = dict.ContainsKey(Constants.CONFIG_KEY_POPUPMGR_FIRST_POPUP_AT_SESSION) ? (long)dict[Constants.CONFIG_KEY_POPUPMGR_FIRST_POPUP_AT_SESSION] : 0;
+                    resetPopupTimerOnAppOpen =
+                        GetInnerBool(dict, Constants.CONFIG_KEY_POPUPMGR_RESET_APP_OPEN_BY_SESSION);
+                    levelToFirstPopup = dict.ContainsKey(Constants.CONFIG_KEY_POPUPMGR_LEVEL_TO_FIRST_POPUP)
+                        ? (long) dict[Constants.CONFIG_KEY_POPUPMGR_LEVEL_TO_FIRST_POPUP]
+                        : 0;
+                    firstPopupAtSession = dict.ContainsKey(Constants.CONFIG_KEY_POPUPMGR_FIRST_POPUP_AT_SESSION)
+                        ? (long) dict[Constants.CONFIG_KEY_POPUPMGR_FIRST_POPUP_AT_SESSION]
+                        : 0;
                 }
             }
         }
     }
-    
+
     [Serializable]
     private class PrivacySettingsConfig : IConfig
     {
@@ -753,16 +832,17 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_PRIVACY_SETTINGS;
         }
-        
+
         public void LoadFromFile()
         {
             LoadConfigFromFile(this);
         }
     }
-    
+
     private class AnalyticsConfig : IConfig
     {
         public bool included;
+        public bool firebaseEchoMode;
         public string googleAppId;
         public string senderId;
         public string clientId;
@@ -772,18 +852,21 @@ public class CLIKConfiguration : EditorWindow
 
         private bool _isValid;
 
-        public Dictionary<string,object> ToDict()
+        public Dictionary<string, object> ToDict()
         {
             return new Dictionary<string, object>
             {
-                {Constants.CONFIG_KEY_FIREBASE, 
-                    new Dictionary<string,object>(){
+                {
+                    Constants.CONFIG_KEY_FIREBASE,
+                    new Dictionary<string, object>()
+                    {
                         {Constants.CONFIG_KEY_FIREBASE_GOOGLE_ID, googleAppId},
                         {Constants.CONFIG_KEY_FIREBASE_SENDER_ID, senderId},
                         {Constants.CONFIG_KEY_FIREBASE_CLIENT_ID, clientId},
                         {Constants.CONFIG_KEY_FIREBASE_STORAGE_BUCKET, storageBucket},
                         {Constants.CONFIG_KEY_FIREBASE_API_KEY, apiKey},
-                        {Constants.CONFIG_KEY_FIREBASE_PROJECT_ID, projectId}
+                        {Constants.CONFIG_KEY_FIREBASE_PROJECT_ID, projectId},
+                        {Constants.CONFIG_KEY_FIREBASE_ECHO_MODE, firebaseEchoMode}
                     }
                 }
             };
@@ -793,31 +876,46 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_ANALYTICS;
         }
-        
+
         public void LoadFromFile()
         {
-            if(TryReadConfigFile(GetServiceName(), out var json))
+            if (TryReadConfigFile(GetServiceName(), out var json))
             {
                 Deserialize(json);
             }
         }
-        
+
         private void Deserialize(string json)
         {
             if (!string.IsNullOrEmpty(json))
             {
                 if (TTPJson.Deserialize(json) is Dictionary<string, object> dict &&
                     dict.ContainsKey(Constants.CONFIG_KEY_FIREBASE) &&
-                    dict[Constants.CONFIG_KEY_FIREBASE] is Dictionary<string,object> firebaseDict)
+                    dict[Constants.CONFIG_KEY_FIREBASE] is Dictionary<string, object> firebaseDict)
                 {
-                    included = dict.ContainsKey(Constants.CONFIG_KEY_INCLUDED) && (bool)dict[Constants.CONFIG_KEY_INCLUDED];
-                    googleAppId = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_GOOGLE_ID) ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_GOOGLE_ID] as string : "";
-                    senderId = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_SENDER_ID) ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_SENDER_ID] as string : "";
-                    clientId = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_CLIENT_ID) ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_CLIENT_ID] as string : "";
-                    storageBucket = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_STORAGE_BUCKET) ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_STORAGE_BUCKET] as string : "";
-                    apiKey = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_API_KEY) ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_API_KEY] as string : "";
-                    projectId = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_PROJECT_ID) ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_PROJECT_ID] as string : "";
-                    
+                    included = dict.ContainsKey(Constants.CONFIG_KEY_INCLUDED) &&
+                               (bool) dict[Constants.CONFIG_KEY_INCLUDED];
+                    firebaseEchoMode = dict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_ECHO_MODE) &&
+                                       (bool) dict[Constants.CONFIG_KEY_FIREBASE_ECHO_MODE];
+                    googleAppId = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_GOOGLE_ID)
+                        ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_GOOGLE_ID] as string
+                        : "";
+                    senderId = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_SENDER_ID)
+                        ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_SENDER_ID] as string
+                        : "";
+                    clientId = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_CLIENT_ID)
+                        ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_CLIENT_ID] as string
+                        : "";
+                    storageBucket = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_STORAGE_BUCKET)
+                        ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_STORAGE_BUCKET] as string
+                        : "";
+                    apiKey = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_API_KEY)
+                        ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_API_KEY] as string
+                        : "";
+                    projectId = firebaseDict.ContainsKey(Constants.CONFIG_KEY_FIREBASE_PROJECT_ID)
+                        ? firebaseDict[Constants.CONFIG_KEY_FIREBASE_PROJECT_ID] as string
+                        : "";
+
                     _isValid = !string.IsNullOrEmpty(googleAppId) &&
                                !string.IsNullOrEmpty(senderId) &&
                                !string.IsNullOrEmpty(clientId) &&
@@ -832,9 +930,8 @@ public class CLIKConfiguration : EditorWindow
         {
             return _isValid;
         }
-        
     }
-    
+
     [Serializable]
     private class RateUsConfig : IConfig
     {
@@ -843,7 +940,7 @@ public class CLIKConfiguration : EditorWindow
         public int coolDown = 3;
 
         private bool _isValid;
-        
+
         public Dictionary<string, object> ToDict()
         {
             return new Dictionary<string, object>()
@@ -858,7 +955,6 @@ public class CLIKConfiguration : EditorWindow
             return Constants.CONFIG_FN_RATEUS;
         }
 
-        
 
         public void LoadFromFile()
         {
@@ -866,11 +962,11 @@ public class CLIKConfiguration : EditorWindow
             _isValid = !string.IsNullOrEmpty(iconUrl);
             if (_isValid)
             {
-                var extenstion = iconUrl.Substring(iconUrl.LastIndexOf(".", System.StringComparison.InvariantCultureIgnoreCase)+1);
+                var extenstion =
+                    iconUrl.Substring(iconUrl.LastIndexOf(".", System.StringComparison.InvariantCultureIgnoreCase) + 1);
                 TTPEditorUtils.DownloadFile(iconUrl, "Assets/StreamingAssets/ttp/rateus/game_icon." + extenstion);
             }
         }
-        
     }
 
     [Serializable]
@@ -883,7 +979,7 @@ public class CLIKConfiguration : EditorWindow
         public string houseAdsServerDomain;
 
         private bool _isValid;
-        
+
         public Dictionary<string, object> ToDict()
         {
             return new Dictionary<string, object>()
@@ -899,9 +995,8 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_BANNERS;
         }
-        
-       
-        
+
+
         public void LoadFromFile()
         {
             LoadConfigFromFile(this);
@@ -919,8 +1014,9 @@ public class CLIKConfiguration : EditorWindow
     {
         public bool included;
         public string appOpenAdMobKey;
-        
+
         private bool _isValid;
+
         public Dictionary<string, object> ToDict()
         {
             return new Dictionary<string, object>()
@@ -939,7 +1035,7 @@ public class CLIKConfiguration : EditorWindow
             LoadConfigFromFile(this);
             _isValid = !string.IsNullOrEmpty(appOpenAdMobKey);
         }
-        
+
         public bool IsValid()
         {
             return _isValid;
@@ -951,9 +1047,9 @@ public class CLIKConfiguration : EditorWindow
     {
         public bool included;
         public string interstitialsAdMobKey;
-        
+
         private bool _isValid;
-        
+
         public Dictionary<string, object> ToDict()
         {
             return new Dictionary<string, object>()
@@ -966,8 +1062,8 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_INTERSTITIALS;
         }
-        
-        
+
+
         public void LoadFromFile()
         {
             LoadConfigFromFile(this);
@@ -979,16 +1075,16 @@ public class CLIKConfiguration : EditorWindow
             return _isValid;
         }
     }
-    
-    
+
+
     [Serializable]
     private class RewardedAdsConfig : IConfig
     {
         public bool included;
         public string rewardedAdsAdMobKey;
-        
+
         private bool _isValid;
-        
+
         public Dictionary<string, object> ToDict()
         {
             return new Dictionary<string, object>()
@@ -1001,9 +1097,8 @@ public class CLIKConfiguration : EditorWindow
         {
             return Constants.CONFIG_FN_RV;
         }
-        
-        
-        
+
+
         public void LoadFromFile()
         {
             LoadConfigFromFile(this);
@@ -1015,7 +1110,7 @@ public class CLIKConfiguration : EditorWindow
             return _isValid;
         }
     }
-    
+
     [Serializable]
     private class RewardedInterConfig : IConfig
     {
@@ -1038,7 +1133,6 @@ public class CLIKConfiguration : EditorWindow
         }
 
 
-
         public void LoadFromFile()
         {
             LoadConfigFromFile(this);
@@ -1050,13 +1144,14 @@ public class CLIKConfiguration : EditorWindow
             return _isValid;
         }
     }
-    
+
     [Serializable]
     private class PromotionConfig : IConfig
     {
         public bool included;
         public string serverDomain;
         private bool _isValid;
+
         public Dictionary<string, object> ToDict()
         {
             return new Dictionary<string, object>()
@@ -1075,14 +1170,14 @@ public class CLIKConfiguration : EditorWindow
             LoadConfigFromFile(this);
             _isValid = !string.IsNullOrEmpty(serverDomain);
         }
-        
+
         public bool IsValid()
         {
             return _isValid;
         }
     }
 
-    
+
     private class PlatformConfiguration
     {
         public AppsflyerConfig appsflyerConfig = new AppsflyerConfig();
@@ -1098,6 +1193,7 @@ public class CLIKConfiguration : EditorWindow
         public OpenAdsConfig openAdsConfig = new OpenAdsConfig();
         public PromotionConfig promotionConfig = new PromotionConfig();
         public GlobalConfig globalConfig = new GlobalConfig();
+        public FacebookConfig facebookConfig = new FacebookConfig();
         
 
         private List<IConfig> _configs;
@@ -1120,9 +1216,10 @@ public class CLIKConfiguration : EditorWindow
             _configs.Add(rateUsConfig);
             _configs.Add(openAdsConfig);
             _configs.Add(promotionConfig);
+            _configs.Add(facebookConfig);
         }
-        
-        
+
+
         public void LoadConfigurationsFromFile()
         {
             foreach (var config in _configs)
@@ -1130,11 +1227,11 @@ public class CLIKConfiguration : EditorWindow
                 config.LoadFromFile();
             }
         }
-        
+
         public void SaveConfigurations()
         {
             SaveConfigurationToFile(popUpMgrConfig);
-            UpdateAndroidRes(globalConfig,analyticsConfig);
+            UpdateAndroidRes(globalConfig, analyticsConfig);
         }
 
         private void SaveConfigurationToFile(IConfig config)
@@ -1155,15 +1252,15 @@ public class CLIKConfiguration : EditorWindow
             File.WriteAllText(fp, json);
         }
     }
-    
+
 
     private static void LoadConfigFromFile(IConfig config)
     {
-        if(TryReadConfigFile(config.GetServiceName(), out var json))
+        if (TryReadConfigFile(config.GetServiceName(), out var json))
         {
             if (!string.IsNullOrEmpty(json))
             {
-                EditorJsonUtility.FromJsonOverwrite(json,config);
+                EditorJsonUtility.FromJsonOverwrite(json, config);
             }
         }
     }
@@ -1171,13 +1268,29 @@ public class CLIKConfiguration : EditorWindow
     private static void UpdateAndroidRes(GlobalConfig globalConfig, AnalyticsConfig analyticsConfig)
     {
         Debug.Log("UpdateAndroidRes:: " + (globalConfig != null ? globalConfig.admobAppId : "globalConfig null"));
-        Debug.Log("UpdateAndroidRes:: " + (analyticsConfig != null ? analyticsConfig.senderId : "analyticsConfig null"));
+        Debug.Log("UpdateAndroidRes:: " +
+                  (analyticsConfig != null ? analyticsConfig.senderId : "analyticsConfig null"));
         var dic = new Dictionary<string, string>();
+        List<string> removeDic = null;
         if (!string.IsNullOrEmpty(globalConfig.admobAppId))
         {
             dic[Constants.RES_NAME_ADMOB_APP_ID] = globalConfig.admobAppId;
         }
-        if (analyticsConfig.IsValid())
+
+        if (analyticsConfig.firebaseEchoMode)
+        {
+            removeDic = new List<string>()
+            {
+                Constants.RES_NAME_SENDER_ID,
+                Constants.RES_NAME_STORAGE_BUCKET,
+                Constants.RES_NAME_PROJECT_ID,
+                Constants.RES_NAME_API_KEY,
+                Constants.RES_NAME_APP_ID,
+                Constants.RES_NAME_CLIENT_ID,
+                Constants.RES_NAME_FIREBASE_DB
+            };
+        }
+        else if (analyticsConfig.IsValid())
         {
             dic[Constants.RES_NAME_SENDER_ID] = analyticsConfig.senderId;
             dic[Constants.RES_NAME_STORAGE_BUCKET] = analyticsConfig.storageBucket;
@@ -1186,12 +1299,28 @@ public class CLIKConfiguration : EditorWindow
             dic[Constants.RES_NAME_APP_ID] = analyticsConfig.googleAppId;
             dic[Constants.RES_NAME_CLIENT_ID] = analyticsConfig.clientId;
         }
+
         var xmlDoc = new XmlDocument();
         xmlDoc.Load(Constants.ANDROID_MANIFEST_RES_FILE_PATH);
         var resPath = xmlDoc.SelectSingleNode(Constants.ANDROID_MANIFEST_RES_PATH);
+        
+        if (removeDic != null)
+        {
+            foreach (string itemToRemove in removeDic)
+            {
+                var xmlNodeToRemove = GetExistingXmlNode(xmlDoc, resPath, itemToRemove);
+                if (xmlNodeToRemove != null)
+                {
+                    var parentNode = xmlNodeToRemove.ParentNode;
+                    if(parentNode != null)
+                        parentNode.RemoveChild(xmlNodeToRemove);
+                }
+            }
+        }
+        
         foreach (var kvp in dic)
         {
-            var node = GetXMlNode(xmlDoc ,resPath, kvp.Key);
+            var node = GetXMlNode(xmlDoc, resPath, kvp.Key);
             var nameAttribute = xmlDoc.CreateAttribute("name");
             nameAttribute.Value = kvp.Key;
             var translatableAttribute = xmlDoc.CreateAttribute("translatable");
@@ -1206,8 +1335,9 @@ public class CLIKConfiguration : EditorWindow
         xmlDoc.Save(Constants.ANDROID_MANIFEST_RES_FILE_PATH);
         Debug.Log("UpdateAndroidRes:: Saved");
     }
-    
-    private static XmlNode GetXMlNode(XmlDocument xmlDocument, XmlNode xmlNode, string nameAttrVal, string type = "string")
+
+    private static XmlNode GetExistingXmlNode(XmlDocument xmlDocument, XmlNode xmlNode, string nameAttrVal,
+        string type = "string")
     {
         var nodes = xmlNode.SelectNodes(type);
         if (nodes != null)
@@ -1220,14 +1350,26 @@ public class CLIKConfiguration : EditorWindow
                 }
             }
         }
+
+        return null;
+    }
+
+    private static XmlNode GetXMlNode(XmlDocument xmlDocument, XmlNode xmlNode, string nameAttrVal,
+        string type = "string")
+    {
+        var existingNode = GetExistingXmlNode(xmlDocument, xmlNode, nameAttrVal, type);
+        if (existingNode != null)
+        {
+            return existingNode;
+        }
+
         return xmlDocument.CreateNode(XmlNodeType.Element, type, null);
     }
-    
+
     private static PlatformConfiguration _configuration = new PlatformConfiguration(0);
-    
+
     private int _selectedPlatform = 0;
 
-    
 
     private void OnEnable()
     {
@@ -1256,12 +1398,12 @@ public class CLIKConfiguration : EditorWindow
 
     private Texture GetTexture(string path)
     {
-        Texture t = new Texture2D( 1, 1 );
-        ((Texture2D)t).LoadImage( System.IO.File.ReadAllBytes( path) );
-        ((Texture2D)t).Apply();
+        Texture t = new Texture2D(1, 1);
+        ((Texture2D) t).LoadImage(System.IO.File.ReadAllBytes(path));
+        ((Texture2D) t).Apply();
         return t;
     }
-    
+
 
     private GUIContent _okGuiContent;
     private GUIContent _xGuiContent;
@@ -1270,39 +1412,273 @@ public class CLIKConfiguration : EditorWindow
     private Texture _minusTexture;
 
     GUIStyle _nonbreakingLabelStyle = new GUIStyle();
-   
+
     private GUIStyle _redLabel = new GUIStyle();
     private GUIStyle _greenLabel = new GUIStyle();
     private GUIStyle _greenIndicator = new GUIStyle();
     private GUIStyle _minusIcon = new GUIStyle();
 
+    private static String[] directoriesToRemove =
+    {
+        "Assets/Plugins/Android", 
+        "Assets/Tabtale/TTPlugins/CLIK/gradletemplates"
+    };
+    private static String[] filesToRemove =
+    {
+        "Assets/Plugins/Android.meta",
+        "Assets/Tabtale/TTPlugins/CLIK/gradletemplates.meta",
+        "Assets/Tabtale/TTPlugins/CLIK/Editor/TTPGradlePreProcess.cs", 
+        "Assets/Tabtale/TTPlugins/CLIK/Editor/TTPGradlePreProcess.cs.meta"
+    };
+
+    private static void RemoveOldFilesIfExists()
+    {
+        foreach (var directoryName in directoriesToRemove)
+        {
+            if (Directory.Exists(directoryName))
+            {
+                DirectoryInfo di = new DirectoryInfo(directoryName);
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
+                foreach (DirectoryInfo dir in di.GetDirectories())
+                {
+                    dir.Delete(true);
+                }
+                Directory.Delete(directoryName);
+            }
+        }
+        foreach (var fileName in filesToRemove)
+        {
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+        }
+    }
+    
     private static bool UnzipAnLoadConfiguration()
     {
-        IOSResolver.PodToolExecutionViaShellEnabled = false;
         var zipPath = EditorUtility.OpenFilePanel("Choose Configuration Zip", "", "zip");
+        return Configure(zipPath);
+    }
+    
+    public static bool Configure(string zipPath)
+    {
+        IOSResolver.PodToolExecutionViaShellEnabled = false;
         if (string.IsNullOrEmpty(zipPath))
         {
+            Debug.LogError("Configure:: Zip does not exist at path - " + zipPath);
             return false;
         }
+
         if (Directory.Exists(GetTTPConfigPath()))
         {
+            Debug.Log("Configure:: removing file at path - " + GetTTPConfigPath());
             Directory.Delete(GetTTPConfigPath(), true);
         }
-        PlayerPrefs.SetInt(Constants.PLAYER_PREFS_KEY_FIRST_CONFIGURATION,1);
-        ZipUtil.Unzip(zipPath,GetTTPConfigPath());
+
+        PlayerPrefs.SetInt(Constants.PLAYER_PREFS_KEY_FIRST_CONFIGURATION, 1);
+        ZipUtil.Unzip(zipPath, GetTTPConfigPath());
         _configuration = new PlatformConfiguration(0);
         _configuration.LoadConfigurationsFromFile();
         ModulateClik();
+        if (_configuration.globalConfig.store == "google")
+        {
+            ProcessGradleTemplatesFiles();
+            CreateJarDependencies(_configuration.globalConfig.isAdMob, _configuration.analyticsConfig.firebaseEchoMode);
+        }
+
         return true;
+    }
+    
+    private static string pomPath = "Assets/Tabtale/TTPlugins/TT_Plugins_Android.pom";
+    private static string depsPath = "Assets/Editor/TTPDependencies.xml";
+
+    private static void CreateJarDependencies(bool isAdMob, bool firebaseEchoMode)
+    {
+        Debug.Log("CreateJarDependencies:: " + isAdMob + ", " + firebaseEchoMode);
+        var includedServices = CLIKConfiguration.GetInclusionScriptableObject();
+        if (includedServices == null)
+        {
+            Debug.LogError("CreateJarDependencies:: included services is null! will not build correctly.");
+            return;
+        }
+
+        var services = new List<string>
+        {
+            "TT_Plugins_Core", "TT_Plugins_Unity"
+        };
+        if (includedServices.appsFlyer)
+        {
+            services.Add("TT_Plugins_AppsFlyer");
+        }
+
+        if (includedServices.crashTool)
+        {
+            services.Add("TT_Plugins_CrashTool");
+        }
+
+        if (includedServices.privacySettings)
+        {
+            services.Add("TT_Plugins_Privacy_Settings");
+        }
+
+        bool popUpMgrIncluded = false;
+        if (includedServices.banners)
+        {
+            popUpMgrIncluded = true;
+            services.Add(isAdMob ? "TT_Plugins_Banners_Admob" : "TT_Plugins_Banners_MoPub");
+            services.Add("TT_Plugins_Elephant");
+        }
+
+        if (includedServices.interstitials)
+        {
+            popUpMgrIncluded = true;
+            services.Add(isAdMob ? "TT_Plugins_Interstitials_Admob" : "TT_Plugins_Interstitials_MoPub");
+        }
+
+        if (includedServices.rvs)
+        {
+            popUpMgrIncluded = true;
+            services.Add(isAdMob ? "TT_Plugins_RewardedAds_Admob" : "TT_Plugins_RewardedAds_MoPub");
+        }
+
+        if (includedServices.openAds && isAdMob)
+        {
+            popUpMgrIncluded = true;
+            services.Add("TT_Plugins_OpenAds");
+        }
+
+        if (includedServices.rvInter && isAdMob)
+        {
+            popUpMgrIncluded = true;
+            services.Add("TT_Plugins_RewardedInterstitials");
+        }
+
+        if (includedServices.promotion)
+        {
+            popUpMgrIncluded = true;
+            services.Add("TT_Plugins_Promotion");
+        }
+
+        if (includedServices.rvs || includedServices.interstitials || includedServices.banners ||
+            includedServices.openAds || includedServices.rvInter)
+        {
+            services.Add("TT_Plugins_ECPM");
+        }
+
+        if (popUpMgrIncluded)
+        {
+            services.Add("TT_Plugins_PopupMgr");
+        }
+
+        if (includedServices.analytics)
+        {
+            services.Add("TT_Plugins_Analytics");
+            if (firebaseEchoMode)
+                services.Add("TT_Plugins_FirebaseEchoAgent");
+            else
+            {
+                services.Add("TT_Plugins_FirebaseAgent");
+                services.Add("TT_Plugins_Remote_Config");
+            }
+        }
+
+        var pomData = PomFile.DeserializeFromFile(pomPath);
+        Debug.Log("CreateJarDependencies:: pomData = " + pomData);
+        var depsFile = DependenciesFile.DeserializeFromFile(depsPath);
+        var artifacts = pomData.PomDependencies.Dependencies;
+        var artifactList = new List<AndroidPackage>();
+        foreach (var service in services)
+        {
+            var artifact = artifacts.FirstOrDefault(p => p.ArtifactId.Equals(service));
+            if (artifact != null)
+            {
+                var package = new AndroidPackage
+                {
+                    Spec = $"{artifact.GroupId}:{artifact.ArtifactId}:{artifact.Version}"
+                };
+                Debug.Log("Found artifact:" + package.Spec);
+                artifactList.Add(package);
+            }
+            else
+            {
+                Debug.Log("Can\'t find artifact:" + service);
+            }
+        }
+
+        depsFile.AndroidPackages = depsFile.AndroidPackages ?? new AndroidPackages();
+        depsFile.AndroidPackages.AndroidPackage = artifactList;
+        depsFile.SerializeToFile();
+    }
+
+    private static void ProcessGradleTemplatesFiles()
+    {
+        string baseDir = System.AppDomain.CurrentDomain.BaseDirectory;
+        Debug.Log("processGradleTemplatesFiles::baseDir=" + baseDir);
+#if UNITY_EDITOR_WIN
+        string pathToGradleTemplateFolder = TTPUtils.CombinePaths(new List<string>
+        {
+            baseDir, "Data", "PlaybackEngines", "AndroidPlayer", "Tools", "GradleTemplates"
+        });
+#else
+        string pathToGradleTemplateFolder = TTPUtils.CombinePaths(new List<string>
+        {
+            baseDir, "PlaybackEngines", "AndroidPlayer", "Tools", "GradleTemplates"
+        });
+        if (!Directory.Exists(pathToGradleTemplateFolder))
+        {
+            pathToGradleTemplateFolder = TTPUtils.CombinePaths(new List<string>
+            {
+                baseDir, "PlaybackEngines", "AndroidPlayer", "SDK", "cmdline-tools", "2.1", "GradleTemplates"
+            });
+        }
+#endif
+        Debug.Log("processGradleTemplatesFiles::pathToGradleTemplateFolder=" + pathToGradleTemplateFolder);
+        string pathToBaseProjectTemplate = Path.Combine(pathToGradleTemplateFolder, "baseProjectTemplate.gradle");
+        bool baseProjectTemplate = File.Exists(pathToBaseProjectTemplate);
+        Debug.Log("processGradleTemplatesFiles::baseProjectTemplate=" + baseProjectTemplate);
+        string pathToLauncherTemplate = Path.Combine(pathToGradleTemplateFolder, "launcherTemplate.gradle");
+        bool launcherTemplate = File.Exists(pathToLauncherTemplate);
+        Debug.Log("processGradleTemplatesFiles::launcherTemplate=" + launcherTemplate);
+        string pathToMainTemplate = Path.Combine(pathToGradleTemplateFolder, "mainTemplate.gradle");
+        bool mainTemplate = File.Exists(pathToMainTemplate);
+        Debug.Log("processGradleTemplatesFiles::mainTemplate=" + mainTemplate);
+        
+        string destinationPath = "Assets/Plugins/Android";
+        string destinationPathToBaseProjectTemplate = Path.Combine(destinationPath, "baseProjectTemplate.gradle");
+        bool destinationBaseProjectTemplate = File.Exists(destinationPathToBaseProjectTemplate);
+        Debug.Log("processGradleTemplatesFiles::destinationBaseProjectTemplate=" + destinationBaseProjectTemplate);
+        string destinationPathToLauncherTemplate = Path.Combine(destinationPath, "launcherTemplate.gradle");
+        bool destinationLauncherTemplate = File.Exists(destinationPathToLauncherTemplate);
+        Debug.Log("processGradleTemplatesFiles::destinationLauncherTemplate=" + destinationLauncherTemplate);
+        string destinationPathToMainTemplate = Path.Combine(destinationPath, "mainTemplate.gradle");
+        bool destinationMainTemplate = File.Exists(destinationPathToMainTemplate);
+        Debug.Log("processGradleTemplatesFiles::mainTemplate=" + destinationMainTemplate);
+        
+        // File.Copy(pathToBaseProjectTemplate, destinationPathToBaseProjectTemplate, true);
+        File.Copy(pathToLauncherTemplate, destinationPathToLauncherTemplate, true);
+        File.Copy(pathToMainTemplate, destinationPathToMainTemplate, true);
+
+        string contentBaseProjectTemplate = File.ReadAllText(destinationPathToBaseProjectTemplate);
+        Debug.Log("processGradleTemplatesFiles::contentBaseProjectTemplate=" + contentBaseProjectTemplate);
+        
+        string contentLauncherTemplate = File.ReadAllText(destinationPathToLauncherTemplate);
+        Debug.Log("processGradleTemplatesFiles::contentLauncherTemplate=" + contentLauncherTemplate);
+        
+        string contentMainTemplate = File.ReadAllText(destinationPathToMainTemplate);
+        Debug.Log("processGradleTemplatesFiles::contentMainTemplate=" + contentMainTemplate);
     }
 
     private void IndicateConfiguration(string labelText, bool valid, bool included)
     {
-        if(!included)
+        if (!included)
             return;
-        
+
         EditorGUILayout.BeginHorizontal();
-        GUILayout.Label (labelText, EditorStyles.boldLabel);
+        GUILayout.Label(labelText, EditorStyles.boldLabel);
         if (valid)
         {
             GUILayout.Label(_okGuiContent, _greenIndicator);
@@ -1328,9 +1704,10 @@ public class CLIKConfiguration : EditorWindow
         includedServices.privacySettings = false;
         includedServices.rateUs = false;
         includedServices.promotion = false;
+        includedServices.facebook = false;
     }
-    
-    private static TTPIncludedServicesScriptableObject GetInclusionScriptableObject(bool reset = false)
+
+    internal static TTPIncludedServicesScriptableObject GetInclusionScriptableObject(bool reset = false)
     {
         var path = "Assets/Tabtale/TTPlugins/CLIK/Resources/ttpIncludedServices.asset";
         if (File.Exists(path))
@@ -1341,17 +1718,20 @@ public class CLIKConfiguration : EditorWindow
             {
                 ResetIncludedServices(includedServices);
             }
+
             return includedServices;
         }
         else
         {
             Debug.Log("GetInclusionScriptableObject ::  2");
-            var includedServicesScriptableObject = ScriptableObject.CreateInstance<TTPIncludedServicesScriptableObject>();
+            var includedServicesScriptableObject =
+                ScriptableObject.CreateInstance<TTPIncludedServicesScriptableObject>();
             var dirpath = CombineWithProjectPath("Tabtale", "TTPlugins", "CLIK", "Resources");
             if (!Directory.Exists(dirpath))
             {
                 Directory.CreateDirectory(dirpath);
             }
+
             AssetDatabase.CreateAsset(includedServicesScriptableObject, path);
             AssetDatabase.SaveAssets();
             return includedServicesScriptableObject;
@@ -1364,16 +1744,18 @@ public class CLIKConfiguration : EditorWindow
         {
             return CombineWithProjectPath("StreamingAssets", "ttp", "configurations");
         }
+
         return CombineWithProjectPath("StreamingAssets", "ttp", "configurations", config + ".json");
     }
-    
+
     private static string CombineWithProjectPath(params string[] pathComponents)
     {
         var path = Application.dataPath;
-        foreach(string c in pathComponents)
+        foreach (string c in pathComponents)
         {
             path = Path.Combine(path, c);
         }
+
         return path;
     }
 
@@ -1386,6 +1768,7 @@ public class CLIKConfiguration : EditorWindow
             output = File.ReadAllText(path);
             return true;
         }
+
         if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android)
         {
             path = CombineWithProjectPath("Plugins", "Android", "assets", "ttp", "configurations",
@@ -1396,6 +1779,7 @@ public class CLIKConfiguration : EditorWindow
                 return true;
             }
         }
+
         output = null;
         return false;
     }
@@ -1418,18 +1802,20 @@ public class CLIKConfiguration : EditorWindow
         curObj.rateUs = objToCpy.rateUs;
         curObj.openAds = objToCpy.openAds;
         curObj.promotion = objToCpy.promotion;
+        curObj.facebook = objToCpy.facebook;
         EditorUtility.SetDirty(curObj);
         AssetDatabase.SaveAssets();
         var saved = GetInclusionScriptableObject();
         if (saved.privacySettings)
         {
             Debug.Log("SaveInclusionScriptableObject Privacy Settings is included");
-        } else
+        }
+        else
         {
             Debug.Log("SaveInclusionScriptableObject No Privacy Settings");
         }
     }
-    
+
     private static void ModulateClik()
     {
         Debug.Log("ModulateClik");
@@ -1445,6 +1831,7 @@ public class CLIKConfiguration : EditorWindow
         ttpIncludedServices.rateUs = _configuration.rateUsConfig.included;
         ttpIncludedServices.openAds = _configuration.openAdsConfig.included;
         ttpIncludedServices.promotion = _configuration.promotionConfig.included;
+        ttpIncludedServices.facebook = _configuration.facebookConfig.included;
 
         var dic = new Dictionary<string, bool>()
         {
@@ -1453,24 +1840,24 @@ public class CLIKConfiguration : EditorWindow
             {"ttpIncludedServices.crashTool", _configuration.crashToolConfig.included},
             {"ttpIncludedServices.banners", _configuration.bannersConfig.included},
             {"ttpIncludedServices.interstitials", _configuration.interstitialsConfig.included},
-            {"ttpIncludedServices.rvs",_configuration.rewardedAdsConfig.included},
-            {"ttpIncludedServices.rvInter",_configuration.rewardedInterConfig.included},
+            {"ttpIncludedServices.rvs", _configuration.rewardedAdsConfig.included},
+            {"ttpIncludedServices.rvInter", _configuration.rewardedInterConfig.included},
             {"ttpIncludedServices.privacySettings", _configuration.privacySettingsConfig.included},
             {"ttpIncludedServices.rateUs", _configuration.rateUsConfig.included},
             {"ttpIncludedServices.openAds", _configuration.openAdsConfig.included},
-            {"ttpIncludedServices.promotion", _configuration.promotionConfig.included}
+            {"ttpIncludedServices.promotion", _configuration.promotionConfig.included},
+            {"ttpIncludedServices.facebook", _configuration.facebookConfig.included}
         };
 
-        var msg = "";   
+        var msg = "";
         foreach (var kvp in dic)
         {
             msg += kvp.Key + "=" + kvp.Value + "\n";
         }
+
         Debug.Log(msg);
         SaveInclusionScriptableObject(ttpIncludedServices);
-        
     }
-
     
     public static void BuilderDetermineIncludedServices(string serverDomain, string bundleId)
     {
@@ -1479,9 +1866,11 @@ public class CLIKConfiguration : EditorWindow
         {
             serverDomain = "http://" + serverDomain;
         }
+
         var isAndroid = EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android;
         var store = isAndroid ? "google" : "apple";
         var url = (serverDomain ?? "http://dashboard.ttpsdk.info") + "/clik-packages/" + store + "/" + bundleId;
+        Debug.Log("BuilderDetermineIncludedServices::url=" + url);
         string resStr = null;
         if (!isAndroid)
         {
@@ -1537,7 +1926,13 @@ public class CLIKConfiguration : EditorWindow
                             }
                         }
                     }
+
                     SaveInclusionScriptableObject(includedServices);
+                    if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android)
+                    {
+                        ProcessGradleTemplatesFiles();
+                        CreateJarDependencies(_configuration.globalConfig.isAdMob, _configuration.analyticsConfig.firebaseEchoMode);
+                    }
                 }
             }
         }
@@ -1545,37 +1940,84 @@ public class CLIKConfiguration : EditorWindow
 
     private class AndroidGradlePreprocess : IPostGenerateGradleAndroidProject
     {
-        public int callbackOrder { get { return 0; } }
+        public int callbackOrder
+        {
+            get { return 0; }
+        }
+
         public void OnPostGenerateGradleAndroidProject(string path)
         {
             var ttpVersion = File.ReadAllText("Assets/Tabtale/TTPlugins/version.txt");
             var ttpVersionGradleProperty = "ttp_version=" + ttpVersion ?? "null";
-            File.AppendAllLines(Path.Combine(path, "gradle.properties"), new string[]
-            {
-               "\nandroid.useAndroidX=true",
-               "android.enableJetifier=true",
-               "android.enableD8.desugaring=true",
-               "android.enableIncrementalDesugaring=false",
-               ttpVersionGradleProperty
-            });
-            File.AppendAllLines(Path.Combine(path, Path.Combine("..","gradle.properties")), new string[]
+            var gradleClassPath = "3.4.3";
+#if UNITY_2021_3_OR_NEWER
+            gradleClassPath = "4.0.1";
+#elif UNITY_2020_1_OR_NEWER
+            gradleClassPath = "3.6.4";
+#endif
+            Debug.Log("OnPostGenerateGradleAndroidProject::gradleClassPath=" + gradleClassPath);
+
+            List<string> gradlePropList = new List<string>
             {
                 "\nandroid.useAndroidX=true",
                 "android.enableJetifier=true",
                 "android.enableD8.desugaring=true",
+#if !UNITY_2020_3_OR_NEWER
                 "android.enableIncrementalDesugaring=false",
+#endif
+                "clik_gradle_classpath=" + gradleClassPath,
                 ttpVersionGradleProperty
-            });
+            };
+
+            File.AppendAllLines(Path.Combine(path, "gradle.properties"), gradlePropList.ToArray());
+            File.AppendAllLines(Path.Combine(path, Path.Combine("..", "gradle.properties")), gradlePropList.ToArray()); 
 
             var buildGradlePath = Path.Combine(path, "build.gradle");
             Debug.Log(path + ", " + Application.productName + ", \n" + buildGradlePath);
-            var currGradle = File.ReadAllText(buildGradlePath);
-            Debug.Log("currGradle = " + currGradle);
-            var globalConfig = new GlobalConfig();
-            globalConfig.LoadFromFile();
-            var modifiedGradle = DetermineIncludedServices(currGradle, globalConfig.isAdMob);
-            Debug.Log("modifiedGradle = " + modifiedGradle);
-            File.WriteAllText(buildGradlePath,modifiedGradle);
+            var gradleLines = File.ReadLines(buildGradlePath).ToList();
+            var i = 0;
+            var indexOfAndroidConfigurations = 0;
+            var indexOfGradleDependencies = 0;
+            foreach (var l in gradleLines)
+            {
+                if (l.Contains("AndroidConfigurations"))
+                {
+                    indexOfAndroidConfigurations = i;
+                }
+                if (l.Contains("dependencies"))
+                {
+                    indexOfGradleDependencies = i;
+                }
+                i++;
+            }
+            var androidConfiguration = gradleLines[indexOfAndroidConfigurations];
+            gradleLines.RemoveAt(indexOfAndroidConfigurations);
+            gradleLines.Insert(indexOfGradleDependencies+1,androidConfiguration);
+            File.WriteAllLines(buildGradlePath, gradleLines);
+            
+            string pathToModuleAndroidManifest = TTPUtils.CombinePaths(new List<string> {path, "src", "main", "AndroidManifest.xml"});
+            FixManifest(pathToModuleAndroidManifest);
+        }
+
+        private static void FixManifest(string pathToManifest)
+        {
+            Debug.Log("OnPostGenerateGradleAndroidProject::FixManifest:pathToManifest=" + pathToManifest);
+            /*var xmlDoc = new XmlDocument();
+            xmlDoc.Load(pathToManifest);
+            XmlElement launchActivityNode =
+                (XmlElement)xmlDoc.SelectSingleNode("/manifest/application/activity[intent-filter/action/@android:name='android.intent.action.MAIN' and " +
+                                                    "intent-filter/category/@android:name='android.intent.category.LAUNCHER']");
+            if (launchActivityNode != null)
+            {
+                string launchModeValue = launchActivityNode.GetAttribute("launchMode", "android");
+                Debug.Log("OnPostGenerateGradleAndroidProject::FixManifest:launchModeValue=" + launchModeValue);
+                launchActivityNode.SetAttribute("launchMode", "android", "singleTop");
+            }*/
+            string androidManifest = File.ReadAllText(pathToManifest);
+            androidManifest = androidManifest.Replace("singleTask", "singleTop");
+            File.WriteAllText(pathToManifest, androidManifest);
+            //xmlDoc.Save(pathToManifest);
+            Debug.Log("OnPostGenerateGradleAndroidProject::FixManifest:androidManifest=" + androidManifest);
         }
         
         private static string DetermineIncludedServices(string mainGradle, bool isAdMob)
@@ -1694,6 +2136,7 @@ public class CLIKConfiguration : EditorWindow
             return mainGradle.Replace("@@TT_PLUGINS_DEPENDENCIES@@", implementationStr);
         }
     }
+
 #if UNITY_IOS
     private class PostProcess : IPostprocessBuildWithReport
     {
@@ -1703,17 +2146,34 @@ public class CLIKConfiguration : EditorWindow
             var plistPath = Path.Combine(report.summary.outputPath, "Info.plist");
             var plist = new PlistDocument();
             var globalConfig = new GlobalConfig();
+            var facebookConfig = new FacebookConfig();
             globalConfig.LoadFromFile();
             plist.ReadFromFile(plistPath);
             plist.root.SetString("GADApplicationIdentifier", globalConfig.admobAppId);
             plist.root.SetString("AppLovinSdkKey", "yRHC8kgWwG5S4lOh7Dx_pZB2iEBLVWMSzde5MKbGahifQ6MTKIT7tk9ZzLvTsFwptZvDuVTTBB8cHU9bohkeQu");
+            facebookConfig.LoadFromFile();
+            if (facebookConfig.included && !string.IsNullOrEmpty(facebookConfig.fbAppName) 
+                                        && !string.IsNullOrEmpty(facebookConfig.fbAppID)
+                                        && !string.IsNullOrEmpty(facebookConfig.fbClientID))
+            {
+                plist.root.CreateArray("URL types").AddDict().CreateArray("URL Schemes").AddString("fb" + (facebookConfig.fbAppID));
+                plist.root.SetString("FacebookAppID", facebookConfig.fbAppID);
+                plist.root.SetString("FacebookDisplayName", facebookConfig.fbAppName);
+                plist.root.SetString("FacebookClientToken", facebookConfig.fbClientID);
+                plist.root.SetBoolean("FacebookAutoLogAppEventsEnabled", true);
+            }
+
             File.WriteAllText(plistPath, plist.WriteToString());
         }
     }
 #endif
     private class ConfigurationSaverPreprocess : IPreprocessBuildWithReport
     {
-        public int callbackOrder { get { return 1; } }
+        public int callbackOrder
+        {
+            get { return 1; }
+        }
+
         public void OnPreprocessBuild(BuildReport report)
         {
             Debug.Log("OnPreprocessBuild " + report.summary.platform);
@@ -1721,18 +2181,18 @@ public class CLIKConfiguration : EditorWindow
             var globalConfig = new GlobalConfig();
             analyticsConfig.LoadFromFile();
             globalConfig.LoadFromFile();
-            UpdateAndroidRes(globalConfig,analyticsConfig);
+            UpdateAndroidRes(globalConfig, analyticsConfig);
 
             if (report.summary.platform == BuildTarget.iOS)
             {
-                CreatePodDependencies(globalConfig.isAdMob);
+                CreatePodDependencies(globalConfig.isAdMob, analyticsConfig.firebaseEchoMode);
             }
-            
         }
         
-        private static void CreatePodDependencies(bool isAdMob)
+
+        private static void CreatePodDependencies(bool isAdMob, bool firebaseEchoMode)
         {
-            var includedServices = GetInclusionScriptableObject();
+            var includedServices = CLIKConfiguration.GetInclusionScriptableObject();
             if (includedServices == null)
             {
                 Debug.LogError("CreatePodDependencies:: included services is null! will not build correctly.");
@@ -1741,22 +2201,27 @@ public class CLIKConfiguration : EditorWindow
             
             var services = new List<string>
             {
-                "TT_Plugins_Core",
-
+                "TT_Plugins_Core"
             };
+            if (includedServices.facebook)
+            {
+                services.Add("TT_Plugins_Facebook");
+            }
             if (includedServices.appsFlyer)
             {
                 services.Add("TT_Plugins_AppsFlyer");
-                
             }
+
             if (includedServices.crashTool)
             {
                 services.Add("TT_Plugins_CrashTool");
             }
+
             if (includedServices.privacySettings)
             {
                 services.Add("TT_Plugins_Privacy_Settings");
             }
+
             bool popUpMgrIncluded = false;
             if (includedServices.banners)
             {
@@ -1769,8 +2234,10 @@ public class CLIKConfiguration : EditorWindow
                 {
                     services.Add("TT_Plugins_Banners_MoPub");
                 }
+
                 services.Add("TT_Plugins_Elephant");
             }
+
             if (includedServices.interstitials)
             {
                 popUpMgrIncluded = true;
@@ -1783,6 +2250,7 @@ public class CLIKConfiguration : EditorWindow
                     services.Add("TT_Plugins_Interstitials_MoPub");
                 }
             }
+
             if (includedServices.rvs)
             {
                 popUpMgrIncluded = true;
@@ -1795,11 +2263,13 @@ public class CLIKConfiguration : EditorWindow
                     services.Add("TT_Plugins_RewardedAds_MoPub");
                 }
             }
+
             if (includedServices.openAds && isAdMob)
             {
                 popUpMgrIncluded = true;
                 services.Add("TT_Plugins_OpenAds");
             }
+
             if (includedServices.rvInter && isAdMob)
             {
                 popUpMgrIncluded = true;
@@ -1811,20 +2281,28 @@ public class CLIKConfiguration : EditorWindow
                 popUpMgrIncluded = true;
                 services.Add("TT_Plugins_Promotion");
             }
-            if (includedServices.rvs || includedServices.interstitials || includedServices.banners || includedServices.openAds || includedServices.rvInter)
+
+            if (includedServices.rvs || includedServices.interstitials || includedServices.banners ||
+                includedServices.openAds || includedServices.rvInter)
             {
                 services.Add("TT_Plugins_ECPM");
             }
+
             if (popUpMgrIncluded)
             {
                 services.Add("TT_Plugins_PopupMgr");
             }
+
             if (includedServices.analytics)
             {
                 services.Add("TT_Plugins_Analytics");
-                services.Add("TT_Plugins_FirebaseAgent");
-                services.Add("TT_Plugins_Remote_Config");
-                
+                if (firebaseEchoMode)
+                    services.Add("TT_Plugins_FirebaseEchoAgent");
+                else
+                {
+                    services.Add("TT_Plugins_FirebaseAgent");
+                    services.Add("TT_Plugins_Remote_Config");
+                }
             }
 #if TTP_DEV_MODE
             services.Clear();
@@ -1843,7 +2321,6 @@ public class CLIKConfiguration : EditorWindow
                     {
                         if (kvp.Key.Contains("TT_Plugins") && !services.Contains(kvp.Key))
                         {
-                            
                             toRemove.Add(kvp.Key);
                         }
                     }
@@ -1853,17 +2330,18 @@ public class CLIKConfiguration : EditorWindow
                         XmlNode nodeToRemove = null;
                         foreach (XmlNode childNode in iosPods.ChildNodes)
                         {
-                            if (childNode.Attributes?["name"] != null && childNode.Attributes["name"].Value == key+"_Pod")
+                            if (childNode.Attributes?["name"] != null && childNode.Attributes["name"].Value == key + "_Pod")
                             {
                                 Debug.Log("removing " + key);
                                 nodeToRemove = childNode;
                             }
                         }
-                        if(nodeToRemove != null)
+
+                        if (nodeToRemove != null)
                             iosPods.RemoveChild(nodeToRemove);
                         dic.Remove(key);
                     }
-                    
+
                     foreach (var kvp in dic)
                     {
                         Debug.Log(kvp.Key + ", " + kvp.Value);
@@ -1884,6 +2362,7 @@ public class CLIKConfiguration : EditorWindow
                         }
                     }
                 }
+
                 xmlDoc.Save("Assets/Editor/TTPDependencies.xml");
             }
         }

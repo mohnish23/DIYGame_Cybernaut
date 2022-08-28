@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public GameObject UnlockItem;
     public GameObject InstructionAnim;
 
+    public bool isWhippedCreamUnlocked;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void StartButton()
     {
+        FindObjectOfType<UpgradeManager>().CustomizeBtn.SetActive(false);
         StartMenu.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("CamAnim0", true);
         ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
@@ -73,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void StartButtonCoffee()
     {
+        FindObjectOfType<UpgradeManager>().CustomizeBtn.SetActive(false);
         Invoke("StartInstruction", 1f);
         StartMenu.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("CamAnim0", true);
@@ -89,6 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void StartButtonBoba()
     {
+        FindObjectOfType<UpgradeManager>().CustomizeBtn.SetActive(false);
         StartMenu.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("CamAnim0", true);
         GameObject.Find("BobaController").GetComponent<BobaController>().canControl = true;

@@ -97,6 +97,7 @@ public class CoffeeController : MonoBehaviour
                 InstructionAnim.Play("Idle");
                 //ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
                 //b.SprinkleMenu.SetActive(true);
+                FindObjectOfType<ButtonController>().CoffeeStepMenu.SetActive(true);
                 CupAnim.speed = 0;
                 CupAnim.gameObject.SetActive(false);
                 pour2.SetActive(false);
@@ -310,7 +311,7 @@ public class CoffeeController : MonoBehaviour
             CupAnim2.gameObject.SetActive(true);
             if(FrothingUnlocked == true)
             {
-                            CupAnim2.Play("CoffeeCupFill3");
+                CupAnim2.Play("CoffeeCupFill3");
             }
             MilkPour.SetActive(true);
             Camera.main.GetComponent<Animator>().SetBool("CamAnim2", true);

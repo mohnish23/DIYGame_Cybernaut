@@ -66,4 +66,18 @@ public class ButtonParameter : MonoBehaviour
             FindObjectOfType<ButtonController>().FlavorNext4();
         }
     }
+
+    public void WhippedCreamSelection()
+    {
+        GameObject.Find("IcingAnimation").transform.GetChild(0).gameObject.SetActive(true);
+        GameObject.Find("IcingAnimation").transform.GetChild(1).gameObject.SetActive(true);
+        Transform t = FindObjectOfType<IceCreamAnim>().GetComponent<Transform>();
+        ButtonController b = FindObjectOfType<ButtonController>();
+        foreach(Renderer r in t.GetComponentsInChildren<Renderer>())
+        {
+            r.material = b.Materials[SelectionNumber];
+        }
+        GameObject.Find("IcingAnimation").transform.GetChild(1).GetComponentInChildren<Renderer>().material = b.Materials[SelectionNumber];
+        b.IcingMenu.SetActive(false);
+    }
 }

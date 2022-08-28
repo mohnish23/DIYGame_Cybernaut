@@ -34,8 +34,8 @@ IMPL_APP_CONTROLLER_SUBCLASS(TTPUnityAppController)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    long long milliseconds = (long long)([[NSDate date] timeIntervalSince1970] * 1000.0);
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithLongLong:milliseconds] forKey:@"lunchTimeInMili"];
+    [[TTPUnityServiceManager sharedInstance] didFinishLaunchingWithOptions:launchOptions application:application];
+    
     
     BOOL success = [super application:application didFinishLaunchingWithOptions:launchOptions];
     [self callPsdkAppController:@"application:didFinishLaunchingWithOptions:" application:application launchOptions:launchOptions];
