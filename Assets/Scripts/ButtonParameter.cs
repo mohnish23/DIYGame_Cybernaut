@@ -27,6 +27,13 @@ public class ButtonParameter : MonoBehaviour
         b.ObjPourSelection();
     }
 
+    public void FrothingPourSelection()
+    {
+        ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
+        b.CurrentFlavor = SelectionNumber;
+        b.FrothPourSelection();
+    }
+
     public void SprinkleButtonActive()
     {
         ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
@@ -65,6 +72,13 @@ public class ButtonParameter : MonoBehaviour
         {
             FindObjectOfType<ButtonController>().FlavorNext4();
         }
+
+        ButtonController b = FindObjectOfType<ButtonController>();
+        foreach(GameObject g in b.InstantiateObjs)
+        {
+            g.SetActive(false);
+            GameObject.Find("Sounds_Sprinkles").GetComponent<AudioSource>().Pause();
+        }
     }
 
     public void WhippedCreamSelection()
@@ -79,5 +93,17 @@ public class ButtonParameter : MonoBehaviour
         }
         GameObject.Find("IcingAnimation").transform.GetChild(1).GetComponentInChildren<Renderer>().material = b.Materials[SelectionNumber];
         b.IcingMenu.SetActive(false);
+    }
+
+    public void FrothingToppingNext()
+    {
+        GameObject.Find("CoffeeCupSmall (1)").GetComponent<AnimController>().LevelComplete();
+    }
+
+    public void CoffeeSleeveSelection()
+    {
+        ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
+        b.CurrentFlavor = SelectionNumber;
+        b.SleeveSelection1();
     }
 }

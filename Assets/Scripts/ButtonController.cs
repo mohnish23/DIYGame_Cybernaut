@@ -13,6 +13,7 @@ public class ButtonController : MonoBehaviour
     public GameObject[] Chunks;
     public GameObject[] DrinkFlavors;
     public GameObject[] InstantiateObjs;
+    public GameObject[] FrothTopObjs;
     public Material[] DrinkMaterials;
     public Material[] Materials;
     public Material[] SleeveMats;
@@ -117,6 +118,18 @@ public class ButtonController : MonoBehaviour
             o.Invoke("StartPouring", 0.1f);
     }
 
+    public void FrothPourSelection()
+    {
+        foreach (GameObject g in FrothTopObjs)
+        {
+            g.SetActive(false);
+        }
+        FrothTopObjs[CurrentFlavor].SetActive(true);
+        ObjPouring o = FrothTopObjs[CurrentFlavor].GetComponent<ObjPouring>();
+        if (o != null)
+            o.Invoke("StartPouring", 0.1f);
+    }
+
     public void FlavorSelection1()
     {
         /*ObiFluidPropertyColorizer[] o = GameObject.FindObjectsOfType<ObiFluidPropertyColorizer>();
@@ -186,12 +199,14 @@ public class ButtonController : MonoBehaviour
 
     public void SleeveSelection1()
     {
-        GameObject.FindGameObjectWithTag("Sleeve").GetComponent<Renderer>().material = SleeveMats[0];
+        FindObjectOfType<GameManager>().CupCustomizationUnlocked = false;
+        GameObject.FindGameObjectWithTag("Sleeve").GetComponent<Renderer>().material = SleeveMats[CurrentFlavor];
         NextButton4.SetActive(true);
     }
 
     public void SleeveSelection2()
     {
+        FindObjectOfType<GameManager>().CupCustomizationUnlocked = false;
         GameObject.FindGameObjectWithTag("Sleeve").GetComponent<Renderer>().material = SleeveMats[1];
         NextButton4.SetActive(true);
     }

@@ -166,6 +166,20 @@ struct EventCallback_1_t435839AFF4474F7EAE0AA8A59F737E798CEAFD30;
 struct EventCallback_1_t7C6768AD962B0B50514570724A38E07DA18FB1FA;
 // UnityEngine.UIElements.EventCallback`1<UnityEngine.UIElements.PointerUpEvent>
 struct EventCallback_1_tE2BCC4FFB156A2716749F7BDD0036A743B039913;
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob>
+struct ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B;
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob>
+struct ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B;
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob>
+struct ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693;
+// Unity.Jobs.IJobExtensions/JobStruct`1/ExecuteJobFunction<Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob>
+struct ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71;
+// Unity.Jobs.IJobExtensions/JobStruct`1/ExecuteJobFunction<Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob>
+struct ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D;
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob>
+struct ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84;
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob>
+struct ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F;
 // Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingConstraintsBatchJob>
 struct ExecuteJobFunction_tD8963418E131F49414C16F90581C8819E986DB2A;
 // Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstSkinConstraintsBatch/ApplySkinConstraintsBatchJob>
@@ -750,8 +764,52 @@ struct CustomStyleProperty_1_t8315EF5D1C5F5FB5F920B77E40695C07DAAB349A_marshaled
 };
 #endif
 
+// Unity.Collections.NativeArray`1<Obi.BurstAffineTransform>
+struct NativeArray_1_t794D1EDCB116E8B6C12D30449B88A627BFBDA5F5 
+{
+	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
+	void* ___m_Buffer_0;
+	// System.Int32 Unity.Collections.NativeArray`1::m_Length
+	int32_t ___m_Length_1;
+	// Unity.Collections.Allocator Unity.Collections.NativeArray`1::m_AllocatorLabel
+	int32_t ___m_AllocatorLabel_2;
+};
+
+// Unity.Collections.NativeArray`1<Obi.BurstColliderShape>
+struct NativeArray_1_t8CF5C553F7F2F505AD7288E1ABB6D2B278B0C274 
+{
+	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
+	void* ___m_Buffer_0;
+	// System.Int32 Unity.Collections.NativeArray`1::m_Length
+	int32_t ___m_Length_1;
+	// Unity.Collections.Allocator Unity.Collections.NativeArray`1::m_AllocatorLabel
+	int32_t ___m_AllocatorLabel_2;
+};
+
 // Unity.Collections.NativeArray`1<Obi.BurstCollisionMaterial>
 struct NativeArray_1_t5BBDE017F7F991E356898F90D13F929D9E6CE693 
+{
+	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
+	void* ___m_Buffer_0;
+	// System.Int32 Unity.Collections.NativeArray`1::m_Length
+	int32_t ___m_Length_1;
+	// Unity.Collections.Allocator Unity.Collections.NativeArray`1::m_AllocatorLabel
+	int32_t ___m_AllocatorLabel_2;
+};
+
+// Unity.Collections.NativeArray`1<Obi.BurstContact>
+struct NativeArray_1_t2705545761658589B4952261F0D3597E41FA32B2 
+{
+	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
+	void* ___m_Buffer_0;
+	// System.Int32 Unity.Collections.NativeArray`1::m_Length
+	int32_t ___m_Length_1;
+	// Unity.Collections.Allocator Unity.Collections.NativeArray`1::m_AllocatorLabel
+	int32_t ___m_AllocatorLabel_2;
+};
+
+// Unity.Collections.NativeArray`1<Obi.BurstRigidbody>
+struct NativeArray_1_tACE22C080DB9BF1E4CF2761F3DA8C0764711D8D5 
 {
 	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
 	void* ___m_Buffer_0;
@@ -982,6 +1040,47 @@ struct BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30_StaticFields
 {
 	// UnityEngine.UIElements.UIR.BMPAlloc UnityEngine.UIElements.UIR.BMPAlloc::Invalid
 	BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___Invalid_0;
+};
+
+// Obi.BatchData
+struct BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B 
+{
+	// System.UInt16 Obi.BatchData::batchID
+	uint16_t ___batchID_0;
+	// System.Int32 Obi.BatchData::startIndex
+	int32_t ___startIndex_1;
+	// System.Int32 Obi.BatchData::constraintCount
+	int32_t ___constraintCount_2;
+	// System.Int32 Obi.BatchData::activeConstraintCount
+	int32_t ___activeConstraintCount_3;
+	// System.Int32 Obi.BatchData::workItemSize
+	int32_t ___workItemSize_4;
+	// System.Int32 Obi.BatchData::workItemCount
+	int32_t ___workItemCount_5;
+	// System.Boolean Obi.BatchData::isLast
+	bool ___isLast_6;
+};
+// Native definition for P/Invoke marshalling of Obi.BatchData
+struct BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B_marshaled_pinvoke
+{
+	uint16_t ___batchID_0;
+	int32_t ___startIndex_1;
+	int32_t ___constraintCount_2;
+	int32_t ___activeConstraintCount_3;
+	int32_t ___workItemSize_4;
+	int32_t ___workItemCount_5;
+	int32_t ___isLast_6;
+};
+// Native definition for COM marshalling of Obi.BatchData
+struct BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B_marshaled_com
+{
+	uint16_t ___batchID_0;
+	int32_t ___startIndex_1;
+	int32_t ___constraintCount_2;
+	int32_t ___activeConstraintCount_3;
+	int32_t ___workItemSize_4;
+	int32_t ___workItemCount_5;
+	int32_t ___isLast_6;
 };
 
 // System.Boolean
@@ -1560,6 +1659,19 @@ struct ErrorInfo_t776D0DEFF42C5321EB2548D87ED238CBE55467F8
 	int32_t ____error_0;
 	// System.Int32 Interop/ErrorInfo::_rawErrno
 	int32_t ____rawErrno_1;
+};
+
+// Oni/ConstraintParameters
+struct ConstraintParameters_tEE3F773CB930E6A0610F3F4B956885DEC4CAA4D3 
+{
+	// Oni/ConstraintParameters/EvaluationOrder Oni/ConstraintParameters::evaluationOrder
+	int32_t ___evaluationOrder_0;
+	// System.Int32 Oni/ConstraintParameters::iterations
+	int32_t ___iterations_1;
+	// System.Single Oni/ConstraintParameters::SORFactor
+	float ___SORFactor_2;
+	// System.Boolean Oni/ConstraintParameters::enabled
+	bool ___enabled_3;
 };
 
 // UnityEngine.UIElements.VisualElement/Hierarchy
@@ -7073,6 +7185,209 @@ struct RawData_t37CAF2D3F74B7723974ED7CEEE9B297D8FA64ED0_marshaled_com
 	uint8_t ___Data_2;
 };
 
+// Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob
+struct UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418 
+{
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::prevPositions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___prevPositions_0;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::prevOrientations
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___prevOrientations_1;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::velocities
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___velocities_2;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::radii
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___radii_3;
+	// Unity.Collections.NativeArray`1<System.Single> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::invMasses
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_4;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::invInertiaTensors
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___invInertiaTensors_5;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::particleMaterialIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleMaterialIndices_6;
+	// Unity.Collections.NativeArray`1<Obi.BurstCollisionMaterial> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::collisionMaterials
+	NativeArray_1_t5BBDE017F7F991E356898F90D13F929D9E6CE693 ___collisionMaterials_7;
+	// Unity.Collections.NativeArray`1<Obi.BurstContact> Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::contacts
+	NativeArray_1_t2705545761658589B4952261F0D3597E41FA32B2 ___contacts_8;
+	// Obi.BatchData Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob::batchData
+	BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B ___batchData_9;
+};
+// Native definition for P/Invoke marshalling of Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob
+struct UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418_marshaled_pinvoke
+{
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___prevPositions_0;
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___prevOrientations_1;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___velocities_2;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___radii_3;
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_4;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___invInertiaTensors_5;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleMaterialIndices_6;
+	NativeArray_1_t5BBDE017F7F991E356898F90D13F929D9E6CE693 ___collisionMaterials_7;
+	NativeArray_1_t2705545761658589B4952261F0D3597E41FA32B2 ___contacts_8;
+	BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B_marshaled_pinvoke ___batchData_9;
+};
+// Native definition for COM marshalling of Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob
+struct UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418_marshaled_com
+{
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___prevPositions_0;
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___prevOrientations_1;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___velocities_2;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___radii_3;
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_4;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___invInertiaTensors_5;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleMaterialIndices_6;
+	NativeArray_1_t5BBDE017F7F991E356898F90D13F929D9E6CE693 ___collisionMaterials_7;
+	NativeArray_1_t2705545761658589B4952261F0D3597E41FA32B2 ___contacts_8;
+	BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B_marshaled_com ___batchData_9;
+};
+
+// Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob
+struct ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E 
+{
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::positions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___positions_0;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::prevPositions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___prevPositions_1;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::orientations
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientations_2;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::prevOrientations
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___prevOrientations_3;
+	// Unity.Collections.NativeArray`1<System.Single> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::invMasses
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_4;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::invInertiaTensors
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___invInertiaTensors_5;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::radii
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___radii_6;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::particleMaterialIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleMaterialIndices_7;
+	// Unity.Collections.NativeArray`1<Obi.BurstCollisionMaterial> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::collisionMaterials
+	NativeArray_1_t5BBDE017F7F991E356898F90D13F929D9E6CE693 ___collisionMaterials_8;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::deltas
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___deltas_9;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::counts
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___counts_10;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::orientationDeltas
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientationDeltas_11;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::orientationCounts
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___orientationCounts_12;
+	// Unity.Collections.NativeArray`1<Obi.BurstContact> Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::contacts
+	NativeArray_1_t2705545761658589B4952261F0D3597E41FA32B2 ___contacts_13;
+	// Obi.BatchData Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::batchData
+	BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B ___batchData_14;
+	// System.Single Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::maxDepenetrationVelocity
+	float ___maxDepenetrationVelocity_15;
+	// System.Single Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob::dt
+	float ___dt_16;
+};
+// Native definition for P/Invoke marshalling of Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob
+struct ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E_marshaled_pinvoke
+{
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___positions_0;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___prevPositions_1;
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientations_2;
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___prevOrientations_3;
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_4;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___invInertiaTensors_5;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___radii_6;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleMaterialIndices_7;
+	NativeArray_1_t5BBDE017F7F991E356898F90D13F929D9E6CE693 ___collisionMaterials_8;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___deltas_9;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___counts_10;
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientationDeltas_11;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___orientationCounts_12;
+	NativeArray_1_t2705545761658589B4952261F0D3597E41FA32B2 ___contacts_13;
+	BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B_marshaled_pinvoke ___batchData_14;
+	float ___maxDepenetrationVelocity_15;
+	float ___dt_16;
+};
+// Native definition for COM marshalling of Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob
+struct ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E_marshaled_com
+{
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___positions_0;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___prevPositions_1;
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientations_2;
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___prevOrientations_3;
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_4;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___invInertiaTensors_5;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___radii_6;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleMaterialIndices_7;
+	NativeArray_1_t5BBDE017F7F991E356898F90D13F929D9E6CE693 ___collisionMaterials_8;
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___deltas_9;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___counts_10;
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientationDeltas_11;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___orientationCounts_12;
+	NativeArray_1_t2705545761658589B4952261F0D3597E41FA32B2 ___contacts_13;
+	BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B_marshaled_com ___batchData_14;
+	float ___maxDepenetrationVelocity_15;
+	float ___dt_16;
+};
+
+// Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob
+struct ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE 
+{
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::particleIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleIndices_0;
+	// System.Single Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::sorFactor
+	float ___sorFactor_1;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::positions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___positions_2;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::deltas
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___deltas_3;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::counts
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___counts_4;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::orientations
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientations_5;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::orientationDeltas
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientationDeltas_6;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::orientationCounts
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___orientationCounts_7;
+	// System.Int32 Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob::activeConstraintCount
+	int32_t ___activeConstraintCount_8;
+};
+
+// Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob
+struct ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953 
+{
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob::particleIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleIndices_0;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob::firstIndex
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___firstIndex_1;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob::numIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___numIndices_2;
+	// System.Single Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob::sorFactor
+	float ___sorFactor_3;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob::positions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___positions_4;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob::deltas
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___deltas_5;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob::counts
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___counts_6;
+};
+
+// Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob
+struct ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B 
+{
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::particleIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleIndices_0;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::firstIndex
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___firstIndex_1;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::numIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___numIndices_2;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::restComs
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___restComs_3;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::coms
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___coms_4;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4x4> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::Aqq
+	NativeArray_1_t63326FF687E26631308829A9CDB0C51D523D4E9A ___Aqq_5;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4x4> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::deformation
+	NativeArray_1_t63326FF687E26631308829A9CDB0C51D523D4E9A ___deformation_6;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::restPositions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___restPositions_7;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::restOrientations
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___restOrientations_8;
+	// Unity.Collections.NativeArray`1<System.Single> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::invMasses
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_9;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob::invInertiaTensors
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___invInertiaTensors_10;
+};
+
 // Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingConstraintsBatchJob
 struct ShapeMatchingConstraintsBatchJob_tCE8F5F4CA538DB2DF6EB1AAA0A295C6FAE37D897 
 {
@@ -7340,6 +7655,27 @@ struct VolumeConstraintsBatchJob_tDDC9BD1CA46DD89E87DDD113F51555CBDC6D1C0D
 	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___counts_9;
 	// System.Single Obi.BurstVolumeConstraintsBatch/VolumeConstraintsBatchJob::deltaTimeSqr
 	float ___deltaTimeSqr_10;
+};
+
+// Oni/SolverParameters
+struct SolverParameters_tBD26C92968F7FB3CC9C9927B5233F6A930E98040 
+{
+	// Oni/SolverParameters/Mode Oni/SolverParameters::mode
+	int32_t ___mode_0;
+	// Oni/SolverParameters/Interpolation Oni/SolverParameters::interpolation
+	int32_t ___interpolation_1;
+	// UnityEngine.Vector3 Oni/SolverParameters::gravity
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___gravity_2;
+	// System.Single Oni/SolverParameters::damping
+	float ___damping_3;
+	// System.Single Oni/SolverParameters::shockPropagation
+	float ___shockPropagation_4;
+	// System.Single Oni/SolverParameters::maxAnisotropy
+	float ___maxAnisotropy_5;
+	// System.Single Oni/SolverParameters::maxDepenetration
+	float ___maxDepenetration_6;
+	// System.Single Oni/SolverParameters::sleepThreshold
+	float ___sleepThreshold_7;
 };
 
 // System.IO.Enumeration.FileSystemEnumerable`1/DelegateEnumerator<System.Object>
@@ -7716,6 +8052,39 @@ struct VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115_StaticFields
 	Dictionary_2_t4055F6540F36F21F9FEDAFB92D8E0089B38EBBC8* ___s_TypeData_63;
 };
 
+// Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob
+struct ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07 
+{
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::prevPositions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___prevPositions_0;
+	// Unity.Collections.NativeArray`1<System.Single> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::invMasses
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_1;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::radii
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___radii_2;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::particleMaterialIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleMaterialIndices_3;
+	// Unity.Collections.NativeArray`1<Obi.BurstCollisionMaterial> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::collisionMaterials
+	NativeArray_1_t5BBDE017F7F991E356898F90D13F929D9E6CE693 ___collisionMaterials_4;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::positions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___positions_5;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::deltas
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___deltas_6;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::counts
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___counts_7;
+	// Unity.Collections.NativeArray`1<Obi.BurstContact> Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::contacts
+	NativeArray_1_t2705545761658589B4952261F0D3597E41FA32B2 ___contacts_8;
+	// Oni/ConstraintParameters Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::constraintParameters
+	ConstraintParameters_tEE3F773CB930E6A0610F3F4B956885DEC4CAA4D3 ___constraintParameters_9;
+	// Oni/SolverParameters Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::solverParameters
+	SolverParameters_tBD26C92968F7FB3CC9C9927B5233F6A930E98040 ___solverParameters_10;
+	// Unity.Mathematics.float4 Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::gravity
+	float4_t89D9A294E7A79BD81BFBDD18654508532958555E ___gravity_11;
+	// System.Single Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::dt
+	float ___dt_12;
+	// Obi.BatchData Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob::batchData
+	BatchData_t3B0FF336008110A5C7637CB18AE7AF77D83C395B ___batchData_13;
+};
+
 // Obi.ParticleGrid/IdentifyMovingParticles
 struct IdentifyMovingParticles_t9F19E111F2AAB7C65968013E84B33CE7A2773FD8 
 {
@@ -7882,6 +8251,36 @@ struct Enumerator_t813234424EE2E4921CCFE321DC3218D3981D537C
 	FixedList4096Bytes_1_t68851192C4759F6403091F86D36D21E60BAB6C71 ___m_List_0;
 	// System.Int32 Unity.Collections.FixedList4096Bytes`1/Enumerator::m_Index
 	int32_t ___m_Index_1;
+};
+
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob>
+struct ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B  : public MulticastDelegate_t
+{
+};
+
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob>
+struct ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B  : public MulticastDelegate_t
+{
+};
+
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob>
+struct ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693  : public MulticastDelegate_t
+{
+};
+
+// Unity.Jobs.IJobExtensions/JobStruct`1/ExecuteJobFunction<Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob>
+struct ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71  : public MulticastDelegate_t
+{
+};
+
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob>
+struct ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84  : public MulticastDelegate_t
+{
+};
+
+// Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob>
+struct ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F  : public MulticastDelegate_t
+{
 };
 
 // Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingConstraintsBatchJob>
@@ -8372,6 +8771,55 @@ struct BaseVerticalCollectionView_t2BCDC86B9E301E46CFB2500A834D640F0B96ADAE_Stat
 	String_t* ___backgroundFillUssClassName_107;
 };
 
+// Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob
+struct PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9 
+{
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::particleIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___particleIndices_0;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::colliderIndices
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___colliderIndices_1;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::offsets
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___offsets_2;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float2> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::stiffnesses
+	NativeArray_1_t46D43179C2B71BAB34958401E08B5C5DA4488E9E ___stiffnesses_3;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::restDarboux
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___restDarboux_4;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::lambdas
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___lambdas_5;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::positions
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___positions_6;
+	// Unity.Collections.NativeArray`1<System.Single> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::invMasses
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invMasses_7;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::orientations
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientations_8;
+	// Unity.Collections.NativeArray`1<System.Single> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::invRotationalMasses
+	NativeArray_1_t3848EE4B6647317212A754634DE6DBC90B99FBEF ___invRotationalMasses_9;
+	// Unity.Collections.NativeArray`1<Obi.BurstColliderShape> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::shapes
+	NativeArray_1_t8CF5C553F7F2F505AD7288E1ABB6D2B278B0C274 ___shapes_10;
+	// Unity.Collections.NativeArray`1<Obi.BurstAffineTransform> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::transforms
+	NativeArray_1_t794D1EDCB116E8B6C12D30449B88A627BFBDA5F5 ___transforms_11;
+	// Unity.Collections.NativeArray`1<Obi.BurstRigidbody> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::rigidbodies
+	NativeArray_1_tACE22C080DB9BF1E4CF2761F3DA8C0764711D8D5 ___rigidbodies_12;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::rigidbodyLinearDeltas
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___rigidbodyLinearDeltas_13;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::rigidbodyAngularDeltas
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___rigidbodyAngularDeltas_14;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.float4> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::deltas
+	NativeArray_1_tB5EA234C6ABA1F626A4BEF4053D06783E15A3881 ___deltas_15;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::counts
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___counts_16;
+	// Unity.Collections.NativeArray`1<Unity.Mathematics.quaternion> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::orientationDeltas
+	NativeArray_1_tE645174F30913B665DE45D85525F90B1F64E054A ___orientationDeltas_17;
+	// Unity.Collections.NativeArray`1<System.Int32> Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::orientationCounts
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___orientationCounts_18;
+	// Obi.BurstInertialFrame Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::inertialFrame
+	BurstInertialFrame_t33CE2DEFF264AA69AF9097A219914A30F5B9CCC6 ___inertialFrame_19;
+	// System.Single Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::deltaTime
+	float ___deltaTime_20;
+	// System.Int32 Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob::activeConstraintCount
+	int32_t ___activeConstraintCount_21;
+};
+
 // Obi.ParticleGrid/GenerateParticleParticleContactsJob
 struct GenerateParticleParticleContactsJob_tDB882641FA06E938671B8B858CC6F2177183BEFC 
 {
@@ -8605,6 +9053,11 @@ struct BaseSlider_1_t72796443D058B00401238104911BE7078A9FD0BA_StaticFields
 	String_t* ___draggerBorderUssClassName_111;
 	// System.String UnityEngine.UIElements.BaseSlider`1::textFieldClassName
 	String_t* ___textFieldClassName_112;
+};
+
+// Unity.Jobs.IJobExtensions/JobStruct`1/ExecuteJobFunction<Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob>
+struct ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D  : public MulticastDelegate_t
+{
 };
 
 // Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.ParticleGrid/GenerateParticleParticleContactsJob>
@@ -12251,6 +12704,559 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Type_op_Inequality_m71AAC993EBBDBA44EE73
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ThrowHelper_ThrowArrayTypeMismatchException_mDF51E7FDFA74ADCDDB1E43CFC4A3A3083692B010 (const RuntimeMethod* method) ;
 // System.Byte& System.Array::GetRawSzArrayData()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR uint8_t* Array_GetRawSzArrayData_m2F8F5B2A381AEF971F12866D9C0A6C4FBA59F6BB_inline (RuntimeArray* __this, const RuntimeMethod* method) ;
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+void ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_Multicast(ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B* __this, ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B* currentDelegate = reinterpret_cast<ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B*>(delegatesToInvoke[i]);
+		typedef void (*FunctionPointerType) (RuntimeObject*, ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+}
+void ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_Open(ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B* __this, ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	typedef void (*FunctionPointerType) (ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___method_ptr_0)(___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, method);
+}
+void ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_OpenStaticInvoker(ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B* __this, ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker5< ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+void ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_ClosedStaticInvoker(ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B* __this, ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker6< RuntimeObject*, ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction__ctor_m08AF4A41C68623D310F162F1EA99CB13CCD27085_gshared (ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 5;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_Open;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 4;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_Open;
+		}
+		else
+		{
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_Multicast;
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleCollisionConstraintsBatch/ParticleCollisionConstraintsBatchJob>::Invoke(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction_Invoke_mB08D1114C3D25A2733E0753509DE1B04E7D97761_gshared (ExecuteJobFunction_tFEFE0E21500C524EFEBCD9CFE765EFDBEA36A65B* __this, ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, ParticleCollisionConstraintsBatchJob_tFDC61D4E7075E0CE3813599A2C6678B74305EE07*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+void ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_Multicast(ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B* __this, UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B* currentDelegate = reinterpret_cast<ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B*>(delegatesToInvoke[i]);
+		typedef void (*FunctionPointerType) (RuntimeObject*, UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+}
+void ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_Open(ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B* __this, UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	typedef void (*FunctionPointerType) (UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___method_ptr_0)(___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, method);
+}
+void ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_OpenStaticInvoker(ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B* __this, UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker5< UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+void ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_ClosedStaticInvoker(ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B* __this, UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker6< RuntimeObject*, UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction__ctor_mD1A69CA5447E8ADD02FED5CD352DC0E4234236D4_gshared (ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 5;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_Open;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 4;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_Open;
+		}
+		else
+		{
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_Multicast;
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleCollisionConstraintsBatch/UpdateParticleContactsJob>::Invoke(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction_Invoke_m852E265A859E7A78170A48D4413EDAE29A07A5B6_gshared (ExecuteJobFunction_t662C47021FAB70C667D3111042274A3168ADD51B* __this, UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, UpdateParticleContactsJob_tBFE6435CB11E93E0710AD7B08A6C02ED4C11C418*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+void ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_Multicast(ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693* __this, ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693* currentDelegate = reinterpret_cast<ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693*>(delegatesToInvoke[i]);
+		typedef void (*FunctionPointerType) (RuntimeObject*, ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+}
+void ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_Open(ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693* __this, ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	typedef void (*FunctionPointerType) (ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___method_ptr_0)(___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, method);
+}
+void ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_OpenStaticInvoker(ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693* __this, ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker5< ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+void ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_ClosedStaticInvoker(ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693* __this, ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker6< RuntimeObject*, ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction__ctor_mF7AC9EEFBC49B20A58A3132B104807EC9B3763F6_gshared (ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 5;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_Open;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 4;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_Open;
+		}
+		else
+		{
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_Multicast;
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstParticleFrictionConstraintsBatch/ParticleFrictionConstraintsBatchJob>::Invoke(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction_Invoke_mD48C64902E44C35271200A5EA913FBF2A01A79E0_gshared (ExecuteJobFunction_t267F15895065E2809FF2669F578A9ED92EB1E693* __this, ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, ParticleFrictionConstraintsBatchJob_tA38A9059A3F7C2703E438E665BC5366EE2AD4A7E*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+void ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_Multicast(ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71* __this, ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71* currentDelegate = reinterpret_cast<ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71*>(delegatesToInvoke[i]);
+		typedef void (*FunctionPointerType) (RuntimeObject*, ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+}
+void ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_Open(ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71* __this, ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	typedef void (*FunctionPointerType) (ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___method_ptr_0)(___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, method);
+}
+void ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_OpenStaticInvoker(ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71* __this, ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker5< ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+void ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_ClosedStaticInvoker(ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71* __this, ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker6< RuntimeObject*, ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+// System.Void Unity.Jobs.IJobExtensions/JobStruct`1/ExecuteJobFunction<Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction__ctor_m07CD8EEEB75BD694CF006A5A1B980D651AAA7B87_gshared (ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 5;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_Open;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 4;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_Open;
+		}
+		else
+		{
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_Multicast;
+}
+// System.Void Unity.Jobs.IJobExtensions/JobStruct`1/ExecuteJobFunction<Obi.BurstPinConstraintsBatch/ApplyPinConstraintsBatchJob>::Invoke(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction_Invoke_m37D7F3C0F0B07811D55C24DFDB75D57FB5C0C043_gshared (ExecuteJobFunction_t5B0D5785656C74D1CE9AE4EF3EE692F9B5D77C71* __this, ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, ApplyPinConstraintsBatchJob_t71C4A676CEE1B38D243AA019DF2D192EBB7AE8EE*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+void ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_Multicast(ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D* __this, PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D* currentDelegate = reinterpret_cast<ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D*>(delegatesToInvoke[i]);
+		typedef void (*FunctionPointerType) (RuntimeObject*, PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+}
+void ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_Open(ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D* __this, PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	typedef void (*FunctionPointerType) (PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___method_ptr_0)(___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, method);
+}
+void ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_OpenStaticInvoker(ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D* __this, PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker5< PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+void ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_ClosedStaticInvoker(ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D* __this, PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker6< RuntimeObject*, PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+// System.Void Unity.Jobs.IJobExtensions/JobStruct`1/ExecuteJobFunction<Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction__ctor_mE05083D706FD51D36ABED422C6AC1AA54FEF9869_gshared (ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 5;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_Open;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 4;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_Open;
+		}
+		else
+		{
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_Multicast;
+}
+// System.Void Unity.Jobs.IJobExtensions/JobStruct`1/ExecuteJobFunction<Obi.BurstPinConstraintsBatch/PinConstraintsBatchJob>::Invoke(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction_Invoke_mCA9377CA60FCC01D9B104D0D89331BCDC36BC036_gshared (ExecuteJobFunction_t3CF6907CEE38CFDCA157960882D4FD48F0D61B0D* __this, PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, PinConstraintsBatchJob_t8786F53440F2E1FAFC2DA2530F47A0B0B0C507D9*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+void ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_Multicast(ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84* __this, ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84* currentDelegate = reinterpret_cast<ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84*>(delegatesToInvoke[i]);
+		typedef void (*FunctionPointerType) (RuntimeObject*, ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+}
+void ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_Open(ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84* __this, ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	typedef void (*FunctionPointerType) (ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___method_ptr_0)(___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, method);
+}
+void ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_OpenStaticInvoker(ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84* __this, ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker5< ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+void ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_ClosedStaticInvoker(ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84* __this, ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker6< RuntimeObject*, ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction__ctor_mC95FB35211E49CA8FC4233DE595448B39F5F4DB3_gshared (ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 5;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_Open;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 4;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_Open;
+		}
+		else
+		{
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_Multicast;
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ApplyShapeMatchingConstraintsBatchJob>::Invoke(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction_Invoke_m305E2300E1DC46F78ADCB8F2DEC17C134A7B87DD_gshared (ExecuteJobFunction_t4F2414EFA828C898B341724BFDFC8501F50CDF84* __this, ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, ApplyShapeMatchingConstraintsBatchJob_t7B246631AAB2994753ED9167BF3D575A1F166953*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+void ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_Multicast(ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F* __this, ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F* currentDelegate = reinterpret_cast<ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F*>(delegatesToInvoke[i]);
+		typedef void (*FunctionPointerType) (RuntimeObject*, ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+}
+void ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_Open(ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F* __this, ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	typedef void (*FunctionPointerType) (ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___method_ptr_0)(___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, method);
+}
+void ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_OpenStaticInvoker(ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F* __this, ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker5< ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+void ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_ClosedStaticInvoker(ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F* __this, ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method)
+{
+	InvokerActionInvoker6< RuntimeObject*, ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4);
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction__ctor_m2A83B1E82E786AB316DB2C4199CF0EDC547AFE08_gshared (ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 5;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_Open;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 4;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_Open;
+		}
+		else
+		{
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_Multicast;
+}
+// System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1/ExecuteJobFunction<Obi.BurstShapeMatchingConstraintsBatch/ShapeMatchingCalculateRestJob>::Invoke(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExecuteJobFunction_Invoke_m5F3AF5E7B01391E7E4BBDB08BC3EB8914024107C_gshared (ExecuteJobFunction_tA3B84D509EB972BE89794DBF036DFEE490DE808F* __this, ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B* ___data0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, ShapeMatchingCalculateRestJob_tBF5A383FD10C11D4B19878248F94F9600F1CF80B*, intptr_t, intptr_t, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, ___additionalPtr1, ___bufferRangePatchData2, ___ranges3, ___jobIndex4, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"

@@ -7443,25 +7443,25 @@ struct U3COnFinishSubmitU3Ed__9_t55620C8613B09E9D27E197A064B9C249B6F13164  : pub
 	float ___U3CelapsedTimeU3E5__3_4;
 };
 
-// ButtonController/<CupRoutine2>d__46
-struct U3CCupRoutine2U3Ed__46_t9DF941FE00057577C51DD1FCBBC3D5094A159827  : public RuntimeObject
+// ButtonController/<CupRoutine2>d__48
+struct U3CCupRoutine2U3Ed__48_t28366A17DDB6F645F8CBF62242A6C85AAEE673CF  : public RuntimeObject
 {
-	// System.Int32 ButtonController/<CupRoutine2>d__46::<>1__state
+	// System.Int32 ButtonController/<CupRoutine2>d__48::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object ButtonController/<CupRoutine2>d__46::<>2__current
+	// System.Object ButtonController/<CupRoutine2>d__48::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// ButtonController ButtonController/<CupRoutine2>d__46::<>4__this
+	// ButtonController ButtonController/<CupRoutine2>d__48::<>4__this
 	ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB* ___U3CU3E4__this_2;
 };
 
-// ButtonController/<CupRoutine>d__45
-struct U3CCupRoutineU3Ed__45_t194A320B89F0408E55976B7EF048C4F3CC3F548E  : public RuntimeObject
+// ButtonController/<CupRoutine>d__47
+struct U3CCupRoutineU3Ed__47_t8A88ABC935B6A885A588249DF9B19263BA218C02  : public RuntimeObject
 {
-	// System.Int32 ButtonController/<CupRoutine>d__45::<>1__state
+	// System.Int32 ButtonController/<CupRoutine>d__47::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object ButtonController/<CupRoutine>d__45::<>2__current
+	// System.Object ButtonController/<CupRoutine>d__47::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// ButtonController ButtonController/<CupRoutine>d__45::<>4__this
+	// ButtonController ButtonController/<CupRoutine>d__47::<>4__this
 	ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB* ___U3CU3E4__this_2;
 };
 
@@ -7534,14 +7534,14 @@ struct U3CPhaseChangeU3Ed__8_t6F4E29294DC9EFB8499E7B73A958FBAF228CF195  : public
 	ChunkController_t5043E131358C344F5097A472BD7F07D65142F52D* ___U3CU3E4__this_2;
 };
 
-// CoffeeController/<StopWater>d__46
-struct U3CStopWaterU3Ed__46_t2CF59CEADAAE4FEFCFD200BA4CD2D24FE49DAAFF  : public RuntimeObject
+// CoffeeController/<StopWater>d__48
+struct U3CStopWaterU3Ed__48_t458D5A6B86DD98342D38A36BF43D2955CBD93DA4  : public RuntimeObject
 {
-	// System.Int32 CoffeeController/<StopWater>d__46::<>1__state
+	// System.Int32 CoffeeController/<StopWater>d__48::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object CoffeeController/<StopWater>d__46::<>2__current
+	// System.Object CoffeeController/<StopWater>d__48::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// CoffeeController CoffeeController/<StopWater>d__46::<>4__this
+	// CoffeeController CoffeeController/<StopWater>d__48::<>4__this
 	CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332* ___U3CU3E4__this_2;
 };
 
@@ -7882,14 +7882,14 @@ struct U3CU3Ec_tC2DEFD54496D8274D1995CC11D74A23339DC4447_StaticFields
 	Func_1_t1A018D620D1CB4D4C91AA22993DD233AA8AB8AFB* ___U3CU3E9__114_0_1;
 };
 
-// GameManager/<StartMenuDelay>d__22
-struct U3CStartMenuDelayU3Ed__22_t85920404552B74584B44C3C29A1A9A411238C38D  : public RuntimeObject
+// GameManager/<StartMenuDelay>d__23
+struct U3CStartMenuDelayU3Ed__23_t6DC2E2541A06242C465A8D5C3187A455F1D1CC0B  : public RuntimeObject
 {
-	// System.Int32 GameManager/<StartMenuDelay>d__22::<>1__state
+	// System.Int32 GameManager/<StartMenuDelay>d__23::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object GameManager/<StartMenuDelay>d__22::<>2__current
+	// System.Object GameManager/<StartMenuDelay>d__23::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// GameManager GameManager/<StartMenuDelay>d__22::<>4__this
+	// GameManager GameManager/<StartMenuDelay>d__23::<>4__this
 	GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* ___U3CU3E4__this_2;
 };
 
@@ -8647,14 +8647,14 @@ struct U3CBilateralInterleavedU3Ed__25_tB10722C421C98CF244A0827F99AABBB88387C8AF
 	int32_t ___U3CiU3E5__2_5;
 };
 
-// ObjPouring/<Pour>d__10
-struct U3CPourU3Ed__10_t792E8BB4331B5D5B1E7AEEF3AF82FED00E254526  : public RuntimeObject
+// ObjPouring/<Pour>d__14
+struct U3CPourU3Ed__14_tB16D9A7AD5494A30033D5DA445431FA5802964DC  : public RuntimeObject
 {
-	// System.Int32 ObjPouring/<Pour>d__10::<>1__state
+	// System.Int32 ObjPouring/<Pour>d__14::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object ObjPouring/<Pour>d__10::<>2__current
+	// System.Object ObjPouring/<Pour>d__14::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// ObjPouring ObjPouring/<Pour>d__10::<>4__this
+	// ObjPouring ObjPouring/<Pour>d__14::<>4__this
 	ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6* ___U3CU3E4__this_2;
 };
 
@@ -36648,48 +36648,50 @@ struct ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB  : public Mono
 	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___DrinkFlavors_6;
 	// UnityEngine.GameObject[] ButtonController::InstantiateObjs
 	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___InstantiateObjs_7;
+	// UnityEngine.GameObject[] ButtonController::FrothTopObjs
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___FrothTopObjs_8;
 	// UnityEngine.Material[] ButtonController::DrinkMaterials
-	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___DrinkMaterials_8;
+	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___DrinkMaterials_9;
 	// UnityEngine.Material[] ButtonController::Materials
-	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___Materials_9;
+	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___Materials_10;
 	// UnityEngine.Material[] ButtonController::SleeveMats
-	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___SleeveMats_10;
+	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___SleeveMats_11;
 	// UnityEngine.Color[] ButtonController::colors
-	ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* ___colors_11;
+	ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* ___colors_12;
 	// UnityEngine.GameObject ButtonController::DrinkMenu
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___DrinkMenu_12;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___DrinkMenu_13;
 	// UnityEngine.GameObject ButtonController::FlavorMenu
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FlavorMenu_13;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FlavorMenu_14;
 	// UnityEngine.GameObject ButtonController::IcingMenu
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___IcingMenu_14;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___IcingMenu_15;
 	// UnityEngine.GameObject ButtonController::SprinkleMenu
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SprinkleMenu_15;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SprinkleMenu_16;
 	// UnityEngine.GameObject ButtonController::SleeveMenu
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SleeveMenu_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SleeveMenu_17;
 	// UnityEngine.GameObject ButtonController::CoffeeStepMenu
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CoffeeStepMenu_17;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CoffeeStepMenu_18;
 	// UnityEngine.GameObject ButtonController::NextButton0
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton0_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton0_19;
 	// UnityEngine.GameObject ButtonController::NextButton1
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton1_19;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton1_20;
 	// UnityEngine.GameObject ButtonController::NextButton2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton2_20;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton2_21;
 	// UnityEngine.GameObject ButtonController::NextButton3
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton3_21;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton3_22;
 	// UnityEngine.GameObject ButtonController::NextButton4
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton4_22;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___NextButton4_23;
 	// UnityEngine.GameObject ButtonController::CoffeeLid
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CoffeeLid_23;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CoffeeLid_24;
 	// UnityEngine.GameObject ButtonController::CoffeeCup
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CoffeeCup_24;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CoffeeCup_25;
 	// UnityEngine.Transform ButtonController::CupPos
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___CupPos_25;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___CupPos_26;
 	// System.Int32 ButtonController::CurrentFlavor
-	int32_t ___CurrentFlavor_26;
+	int32_t ___CurrentFlavor_27;
 	// UnityEngine.Animator ButtonController::CupAnim
-	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___CupAnim_27;
+	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___CupAnim_28;
 	// UnityEngine.GameObject ButtonController::Customer
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Customer_28;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Customer_29;
 };
 
 // ButtonParameter
@@ -37017,8 +37019,12 @@ struct CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332  : public Mono
 	bool ___LatteArtUnlocked_44;
 	// System.Boolean CoffeeController::FrothingUnlocked
 	bool ___FrothingUnlocked_45;
+	// System.Boolean CoffeeController::FrothingToppingsUnlocked
+	bool ___FrothingToppingsUnlocked_46;
+	// UnityEngine.GameObject CoffeeController::FrothingMenu
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FrothingMenu_47;
 	// UnityEngine.Animator CoffeeController::InstructionAnim
-	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___InstructionAnim_46;
+	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___InstructionAnim_48;
 };
 
 // ColliderHighlighter
@@ -37467,6 +37473,8 @@ struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6  : public MonoBehav
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___InstructionAnim_17;
 	// System.Boolean GameManager::isWhippedCreamUnlocked
 	bool ___isWhippedCreamUnlocked_18;
+	// System.Boolean GameManager::CupCustomizationUnlocked
+	bool ___CupCustomizationUnlocked_19;
 };
 
 // Glass_CameraMove
@@ -39115,6 +39123,14 @@ struct ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6  : public MonoBehavi
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___g_9;
 	// UnityEngine.Material[] ObjPouring::SpawnMats
 	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___SpawnMats_10;
+	// System.Single ObjPouring::ClampPosMinX
+	float ___ClampPosMinX_11;
+	// System.Single ObjPouring::ClampPosMaxX
+	float ___ClampPosMaxX_12;
+	// System.Single ObjPouring::ClampPosMinZ
+	float ___ClampPosMinZ_13;
+	// System.Single ObjPouring::ClampPosMaxZ
+	float ___ClampPosMaxZ_14;
 };
 
 // ObjectDragger
@@ -40153,6 +40169,8 @@ struct SlicingMovement_t27EA8711A3FB4A951A6DEBEAB8AB16AE9CDF9D41  : public MonoB
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___MoveToPos_4;
 	// System.Boolean SlicingMovement::canMove
 	bool ___canMove_5;
+	// System.Single SlicingMovement::MvmtSpeed
+	float ___MvmtSpeed_6;
 };
 
 // System.Net.Sockets.SocketException
@@ -44628,13 +44646,13 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4132[12] =
 	static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___phase2_4)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___phase3_5)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___canControl_6)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___ScoopAnim_7)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___MilkPour_8)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___Liquid_9)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___CupAnim_10)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___pour_11)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___speed_12)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___ObjectPourMenu_13)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___ObjectPourSurface_14)),static_cast<int32_t>(offsetof(BobaController_t78411565E66F7B40090D8FBDAB21E53368E4D6D8, ___ObjPourer_15)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4133[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CCupRoutineU3Ed__45_t194A320B89F0408E55976B7EF048C4F3CC3F548E, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CCupRoutineU3Ed__45_t194A320B89F0408E55976B7EF048C4F3CC3F548E, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CCupRoutineU3Ed__45_t194A320B89F0408E55976B7EF048C4F3CC3F548E, ___U3CU3E4__this_2)),};
+	static_cast<int32_t>(offsetof(U3CCupRoutineU3Ed__47_t8A88ABC935B6A885A588249DF9B19263BA218C02, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CCupRoutineU3Ed__47_t8A88ABC935B6A885A588249DF9B19263BA218C02, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CCupRoutineU3Ed__47_t8A88ABC935B6A885A588249DF9B19263BA218C02, ___U3CU3E4__this_2)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4134[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CCupRoutine2U3Ed__46_t9DF941FE00057577C51DD1FCBBC3D5094A159827, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CCupRoutine2U3Ed__46_t9DF941FE00057577C51DD1FCBBC3D5094A159827, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CCupRoutine2U3Ed__46_t9DF941FE00057577C51DD1FCBBC3D5094A159827, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4135[25] = 
+	static_cast<int32_t>(offsetof(U3CCupRoutine2U3Ed__48_t28366A17DDB6F645F8CBF62242A6C85AAEE673CF, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CCupRoutine2U3Ed__48_t28366A17DDB6F645F8CBF62242A6C85AAEE673CF, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CCupRoutine2U3Ed__48_t28366A17DDB6F645F8CBF62242A6C85AAEE673CF, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4135[26] = 
 {
-	static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___Gradients_4)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___Chunks_5)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___DrinkFlavors_6)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___InstantiateObjs_7)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___DrinkMaterials_8)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___Materials_9)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___SleeveMats_10)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___colors_11)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___DrinkMenu_12)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___FlavorMenu_13)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___IcingMenu_14)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___SprinkleMenu_15)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___SleeveMenu_16)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CoffeeStepMenu_17)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton0_18)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton1_19)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton2_20)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton3_21)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton4_22)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CoffeeLid_23)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CoffeeCup_24)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CupPos_25)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CurrentFlavor_26)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CupAnim_27)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___Customer_28)),};
+	static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___Gradients_4)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___Chunks_5)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___DrinkFlavors_6)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___InstantiateObjs_7)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___FrothTopObjs_8)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___DrinkMaterials_9)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___Materials_10)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___SleeveMats_11)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___colors_12)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___DrinkMenu_13)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___FlavorMenu_14)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___IcingMenu_15)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___SprinkleMenu_16)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___SleeveMenu_17)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CoffeeStepMenu_18)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton0_19)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton1_20)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton2_21)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton3_22)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___NextButton4_23)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CoffeeLid_24)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CoffeeCup_25)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CupPos_26)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CurrentFlavor_27)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___CupAnim_28)),static_cast<int32_t>(offsetof(ButtonController_t8BBD437FF0ACF311359579ED9B00DC8DB2A30DEB, ___Customer_29)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4136[1] = 
 {
 	static_cast<int32_t>(offsetof(ButtonParameter_t1F45C1732EA8ACA9428FD2A968411A6EC63AD9DC, ___SelectionNumber_4)),};
@@ -44649,10 +44667,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4139[5] =
 	static_cast<int32_t>(offsetof(ChunkController_t5043E131358C344F5097A472BD7F07D65142F52D, ___anim_4)),static_cast<int32_t>(offsetof(ChunkController_t5043E131358C344F5097A472BD7F07D65142F52D, ___ChunkObj_5)),static_cast<int32_t>(offsetof(ChunkController_t5043E131358C344F5097A472BD7F07D65142F52D, ___CanControl_6)),static_cast<int32_t>(offsetof(ChunkController_t5043E131358C344F5097A472BD7F07D65142F52D, ___Icing_7)),static_cast<int32_t>(offsetof(ChunkController_t5043E131358C344F5097A472BD7F07D65142F52D, ___InstructionAnim_8)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4140[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CStopWaterU3Ed__46_t2CF59CEADAAE4FEFCFD200BA4CD2D24FE49DAAFF, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CStopWaterU3Ed__46_t2CF59CEADAAE4FEFCFD200BA4CD2D24FE49DAAFF, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CStopWaterU3Ed__46_t2CF59CEADAAE4FEFCFD200BA4CD2D24FE49DAAFF, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4141[43] = 
+	static_cast<int32_t>(offsetof(U3CStopWaterU3Ed__48_t458D5A6B86DD98342D38A36BF43D2955CBD93DA4, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CStopWaterU3Ed__48_t458D5A6B86DD98342D38A36BF43D2955CBD93DA4, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CStopWaterU3Ed__48_t458D5A6B86DD98342D38A36BF43D2955CBD93DA4, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4141[45] = 
 {
-	static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___ScoopAnim_4)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___BottleAnim_5)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CupAnim_6)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CupAnim2_7)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MachineAnim_8)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pour_9)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pourCoffee_10)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CoffeeBottle_11)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pourWater_12)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pour2_13)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pour3_14)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CoffeeNextBtn_15)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___Cup_16)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CoffeeGrinder_17)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___WaterPouring_18)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___WaterPouring2_19)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___WaterPourer_20)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___StirringSpoon_21)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CupLiquid_22)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___FillTarget_23)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___Color1_24)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___canControl_25)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPour_26)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPourXMin_27)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPourXMax_28)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPourZMin_29)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPourZMax_30)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___touchSpeed_31)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phase2_32)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phase1_33)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phase0_5_34)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phase0_35)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseB_36)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseB1_37)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseB2_38)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseB3_39)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseC_40)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseC1_41)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseD_42)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseD1_43)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___LatteArtUnlocked_44)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___FrothingUnlocked_45)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___InstructionAnim_46)),};
+	static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___ScoopAnim_4)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___BottleAnim_5)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CupAnim_6)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CupAnim2_7)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MachineAnim_8)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pour_9)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pourCoffee_10)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CoffeeBottle_11)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pourWater_12)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pour2_13)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___pour3_14)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CoffeeNextBtn_15)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___Cup_16)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CoffeeGrinder_17)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___WaterPouring_18)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___WaterPouring2_19)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___WaterPourer_20)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___StirringSpoon_21)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___CupLiquid_22)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___FillTarget_23)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___Color1_24)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___canControl_25)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPour_26)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPourXMin_27)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPourXMax_28)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPourZMin_29)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___MilkPourZMax_30)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___touchSpeed_31)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phase2_32)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phase1_33)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phase0_5_34)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phase0_35)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseB_36)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseB1_37)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseB2_38)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseB3_39)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseC_40)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseC1_41)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseD_42)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___phaseD1_43)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___LatteArtUnlocked_44)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___FrothingUnlocked_45)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___FrothingToppingsUnlocked_46)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___FrothingMenu_47)),static_cast<int32_t>(offsetof(CoffeeController_tF965ED9B60CA51E8A890A1FB42FC8F246BC77332, ___InstructionAnim_48)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4142[3] = 
 {
 	static_cast<int32_t>(offsetof(U3CFailDialogueRoutineU3Ed__6_tFE2DA4E17F01A1BB0199D8BB9FEDAEADEDD1C22F, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CFailDialogueRoutineU3Ed__6_tFE2DA4E17F01A1BB0199D8BB9FEDAEADEDD1C22F, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CFailDialogueRoutineU3Ed__6_tFE2DA4E17F01A1BB0199D8BB9FEDAEADEDD1C22F, ___U3CU3E4__this_2)),};
@@ -44664,10 +44682,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4144[1] =
 	static_cast<int32_t>(offsetof(EditTest_t0E5B6CA3B50679D180E59A1468C9114CD53921CD, ___txt_4)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4145[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CStartMenuDelayU3Ed__22_t85920404552B74584B44C3C29A1A9A411238C38D, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CStartMenuDelayU3Ed__22_t85920404552B74584B44C3C29A1A9A411238C38D, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CStartMenuDelayU3Ed__22_t85920404552B74584B44C3C29A1A9A411238C38D, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4146[15] = 
+	static_cast<int32_t>(offsetof(U3CStartMenuDelayU3Ed__23_t6DC2E2541A06242C465A8D5C3187A455F1D1CC0B, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CStartMenuDelayU3Ed__23_t6DC2E2541A06242C465A8D5C3187A455F1D1CC0B, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CStartMenuDelayU3Ed__23_t6DC2E2541A06242C465A8D5C3187A455F1D1CC0B, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4146[16] = 
 {
-	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___StartMenu_4)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___CharPos_5)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___CurrentPos_6)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___Pos_7)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___CupDisplay_8)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___FlavorDisplay_9)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___Customers_10)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___TargetFlavor_11)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___isExLevel_12)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___isAsmrLevel_13)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___mainCanvas_14)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___UnlockScreen_15)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___UnlockItem_16)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___InstructionAnim_17)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___isWhippedCreamUnlocked_18)),};
+	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___StartMenu_4)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___CharPos_5)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___CurrentPos_6)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___Pos_7)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___CupDisplay_8)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___FlavorDisplay_9)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___Customers_10)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___TargetFlavor_11)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___isExLevel_12)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___isAsmrLevel_13)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___mainCanvas_14)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___UnlockScreen_15)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___UnlockItem_16)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___InstructionAnim_17)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___isWhippedCreamUnlocked_18)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___CupCustomizationUnlocked_19)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4147[4] = 
 {
 	static_cast<int32_t>(offsetof(U3CAnimRoutineU3Ed__7_tF8FAE8033E1EFFDC15AAF9865A85B43CFC7956DE, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CAnimRoutineU3Ed__7_tF8FAE8033E1EFFDC15AAF9865A85B43CFC7956DE, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CAnimRoutineU3Ed__7_tF8FAE8033E1EFFDC15AAF9865A85B43CFC7956DE, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CAnimRoutineU3Ed__7_tF8FAE8033E1EFFDC15AAF9865A85B43CFC7956DE, ___U3CiU3E5__2_3)),};
@@ -44688,16 +44706,16 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4153[1] =
 	static_cast<int32_t>(offsetof(LevelManager_t8405886BBC5A0ACBB1CC210E25D5DA1C72D16530, ___Levels_4)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4154[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CPourU3Ed__10_t792E8BB4331B5D5B1E7AEEF3AF82FED00E254526, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CPourU3Ed__10_t792E8BB4331B5D5B1E7AEEF3AF82FED00E254526, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CPourU3Ed__10_t792E8BB4331B5D5B1E7AEEF3AF82FED00E254526, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4155[7] = 
+	static_cast<int32_t>(offsetof(U3CPourU3Ed__14_tB16D9A7AD5494A30033D5DA445431FA5802964DC, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CPourU3Ed__14_tB16D9A7AD5494A30033D5DA445431FA5802964DC, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CPourU3Ed__14_tB16D9A7AD5494A30033D5DA445431FA5802964DC, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4155[11] = 
 {
-	static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___PouringObj_4)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___SpawnPoint_5)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___canPour_6)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___touchSpeed_7)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___SpawnTime_8)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___g_9)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___SpawnMats_10)),};
+	static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___PouringObj_4)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___SpawnPoint_5)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___canPour_6)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___touchSpeed_7)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___SpawnTime_8)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___g_9)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___SpawnMats_10)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___ClampPosMinX_11)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___ClampPosMaxX_12)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___ClampPosMinZ_13)),static_cast<int32_t>(offsetof(ObjPouring_tD9ADB4F5A9A60EA72FBAF5F82B443981383FA2D6, ___ClampPosMaxZ_14)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4156[6] = 
 {
 	static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___touchSpeed_4)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___FlavorUI_5)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___SleeveUI_6)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___emitter_7)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___Icing_8)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___Sleeve_9)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4157[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4157[3] = 
 {
-	static_cast<int32_t>(offsetof(SlicingMovement_t27EA8711A3FB4A951A6DEBEAB8AB16AE9CDF9D41, ___MoveToPos_4)),static_cast<int32_t>(offsetof(SlicingMovement_t27EA8711A3FB4A951A6DEBEAB8AB16AE9CDF9D41, ___canMove_5)),};
+	static_cast<int32_t>(offsetof(SlicingMovement_t27EA8711A3FB4A951A6DEBEAB8AB16AE9CDF9D41, ___MoveToPos_4)),static_cast<int32_t>(offsetof(SlicingMovement_t27EA8711A3FB4A951A6DEBEAB8AB16AE9CDF9D41, ___canMove_5)),static_cast<int32_t>(offsetof(SlicingMovement_t27EA8711A3FB4A951A6DEBEAB8AB16AE9CDF9D41, ___MvmtSpeed_6)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4158[1] = 
 {
 	static_cast<int32_t>(offsetof(SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734, ___Sounds_4)),};

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BobaController : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class BobaController : MonoBehaviour
         }
         else if (phase2 == true)
         {
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = CupAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / CupAnim.GetCurrentAnimatorClipInfo(0).Length;
             MilkPour.SetActive(true);
             Material m = Liquid.GetComponent<Renderer>().material;
             float h;
@@ -63,6 +65,7 @@ public class BobaController : MonoBehaviour
         {
             if (canControl == true)
             {
+                GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = ScoopAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / ScoopAnim.GetCurrentAnimatorClipInfo(0).Length;
                 if (Input.touchCount > 0)
                 {
                     Touch touch = Input.GetTouch(0);

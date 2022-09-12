@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KnifeController : MonoBehaviour
 {
@@ -26,8 +27,9 @@ public class KnifeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SlidingPhase == false)
+        if (SlidingPhase == false)
         {
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = (float) Pos / nextPos.Length;
             InstructionAnim.Play("InstructionSwipeDown");
             if (Input.touchCount > 0)
             {
@@ -73,6 +75,7 @@ public class KnifeController : MonoBehaviour
                     GameObject.Find("Sounds_KnifeSlide").GetComponent<AudioSource>().Pause();
                 }
 
+                GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = transform.localPosition.x / 0.892f;
                 SlidePos.localPosition = new Vector3(Mathf.Lerp(SlidePos.localPosition.x, 0.892f, SlideSpeed), SlidePos.localPosition.y, SlidePos.localPosition.z);
             }
         }
@@ -84,7 +87,10 @@ public class KnifeController : MonoBehaviour
         if (Pos < nextPos.Length - 1)
             Pos += 1;
         else if (Pos == nextPos.Length - 1)
+        {
             SlidingPhase = true;
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = 1;
+        }
         yield return new WaitForSeconds(WaitTime2);
         Choppable = true;
     }

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public GameObject InstructionAnim;
 
     public bool isWhippedCreamUnlocked;
+    public bool CupCustomizationUnlocked;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,8 @@ public class GameManager : MonoBehaviour
 
     public void StartButton()
     {
+        GameObject.Find("ProgressBar").GetComponent<Image>().enabled = true;
+        GameObject.Find("ProgressBarFill").GetComponent<Image>().enabled = true;
         FindObjectOfType<UpgradeManager>().CustomizeBtn.SetActive(false);
         StartMenu.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("CamAnim0", true);
@@ -76,6 +79,8 @@ public class GameManager : MonoBehaviour
 
     public void StartButtonCoffee()
     {
+        GameObject.Find("ProgressBar").GetComponent<Image>().enabled = true;
+        GameObject.Find("ProgressBarFill").GetComponent<Image>().enabled = true;
         FindObjectOfType<UpgradeManager>().CustomizeBtn.SetActive(false);
         Invoke("StartInstruction", 1f);
         StartMenu.SetActive(false);
@@ -93,6 +98,8 @@ public class GameManager : MonoBehaviour
 
     public void StartButtonBoba()
     {
+        GameObject.Find("ProgressBar").GetComponent<Image>().enabled = true;
+        GameObject.Find("ProgressBarFill").GetComponent<Image>().enabled = true;
         FindObjectOfType<UpgradeManager>().CustomizeBtn.SetActive(false);
         StartMenu.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("CamAnim0", true);

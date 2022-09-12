@@ -14,6 +14,8 @@ public class UnlockScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DescText = GameObject.Find("BannerTxt").GetComponent<Text>();
+
         if (EndNum == 0)
         {
             BgRays.SetActive(true);

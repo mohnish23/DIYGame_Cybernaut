@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjPouring : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ObjPouring : MonoBehaviour
     public float SpawnTime = 0.2f;
     public GameObject g;
     public Material[] SpawnMats;
+    public float ClampPosMinX = -0.3f;
+    public float ClampPosMaxX = 0.38f;
+    public float ClampPosMinZ = 0.5f;
+    public float ClampPosMaxZ = 1.14f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +23,10 @@ public class ObjPouring : MonoBehaviour
         //StartCoroutine(Pour());
         SpawnPoint = transform.Find("SpawnPoint");
         GameObject.Find("Instructions").GetComponent<Animator>().Play("InstructionInfinity");
-        FindObjectOfType<IceCubeController>().enabled = false;
+        if(FindObjectOfType<IceCubeController>() != null)
+            FindObjectOfType<IceCubeController>().enabled = false;
+        GameObject.Find("ProgressBar").GetComponent<Image>().enabled = false;
+        GameObject.Find("ProgressBarFill").GetComponent<Image>().enabled = false;
     }
 
     // Update is called once per frame
@@ -41,9 +49,9 @@ public class ObjPouring : MonoBehaviour
             GameObject.Find("Sounds_Sprinkles").GetComponent<AudioSource>().Pause();
         }
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -0.3f, 0.38f),
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, ClampPosMinX, ClampPosMaxX),
             transform.position.y,
-            Mathf.Clamp(transform.position.z, 0.5f, 1.14f));
+            Mathf.Clamp(transform.position.z, ClampPosMinZ, ClampPosMaxZ));
     }
 
     public void StartPouring()

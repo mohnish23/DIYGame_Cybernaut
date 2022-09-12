@@ -15,6 +15,7 @@ TagManager:
   - Chunk
   - Enemy
   - Player2
+  - CoffeeComponent
   layers:
   - Default
   - TransparentFX

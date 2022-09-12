@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChunkController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class ChunkController : MonoBehaviour
     {
         if(CanControl == true)
         {
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = anim.GetCurrentAnimatorStateInfo(0).normalizedTime / anim.GetCurrentAnimatorClipInfo(0).Length;
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -37,9 +39,17 @@ public class ChunkController : MonoBehaviour
             }
             else
             {
-                anim.speed = 0;
-                GameObject.Find("Sounds_Ice").GetComponent<AudioSource>().Pause();
+                Invoke("CancelInputChunk", 2f);
             }
+        }
+    }
+
+    public void CancelInputChunk()
+    {
+        if(Input.touchCount == 0)
+        {
+            anim.speed = 0;
+            GameObject.Find("Sounds_Ice").GetComponent<AudioSource>().Pause();
         }
     }
 

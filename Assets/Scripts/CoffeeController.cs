@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoffeeController : MonoBehaviour
 {
@@ -48,6 +49,8 @@ public class CoffeeController : MonoBehaviour
 
     public bool LatteArtUnlocked;
     public bool FrothingUnlocked;
+    public bool FrothingToppingsUnlocked;
+    public GameObject FrothingMenu;
 
     public Animator InstructionAnim;
 
@@ -61,6 +64,7 @@ public class CoffeeController : MonoBehaviour
         ScoopAnim.speed = 0;
         CupLiquid = Cup.GetComponentInChildren<Wobble>();
         FillTarget = Cup.transform.Find("FillTarget").gameObject;
+        PlayerPrefs.SetInt("Temp", 0);
         //CupAnim.gameObject.SetActive(false);
         //pour.SetActive(false);
     }
@@ -73,6 +77,8 @@ public class CoffeeController : MonoBehaviour
             GameObject.Find("Sounds_PowderPour").GetComponent<AudioSource>().Stop();
             InstructionAnim.Play("InstructionDragDown");
             CupAnim.gameObject.SetActive(true);
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = CupAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / CupAnim.GetCurrentAnimatorClipInfo(0).Length;
+
             if (canControl == true)
             {
                 if (Input.touchCount > 0)
@@ -116,7 +122,9 @@ public class CoffeeController : MonoBehaviour
             pourCoffee.SetActive(false);
             CoffeeBottle.SetActive(false);
 
-            if(Input.touchCount > 0)
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = MachineAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / MachineAnim.GetCurrentAnimatorClipInfo(0).Length;
+
+            if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
                 if(touch.phase == TouchPhase.Moved)
@@ -132,6 +140,8 @@ public class CoffeeController : MonoBehaviour
         else if(phaseC1 == true)
         {
             Animator WaterAnim = WaterPouring2.GetComponent<Animator>();
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = WaterAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / WaterAnim.GetCurrentAnimatorClipInfo(0).Length;
+
             CupAnim.gameObject.SetActive(true);
             if (canControl == true)
             {
@@ -142,14 +152,14 @@ public class CoffeeController : MonoBehaviour
                     pour.SetActive(true);
                     GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
-                else
+                /*else
                 {
                     InstructionAnim.Play("InstructionDragDown");
                     CupAnim.speed = 0;
                     WaterAnim.speed = 0;
                     pour.SetActive(false);
                     GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
-                }
+                }*/
             }
 
             if (CupLiquid.Fill <= 0.6f)
@@ -174,7 +184,9 @@ public class CoffeeController : MonoBehaviour
             InstructionAnim.Play("InstructionDragDown");
             Animator WaterAnim = WaterPouring2.GetComponent<Animator>();
 
-            if(Input.touchCount > 0)
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = WaterAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / WaterAnim.GetCurrentAnimatorClipInfo(0).Length;
+
+            if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
                 if(touch.phase == TouchPhase.Moved)
@@ -183,11 +195,11 @@ public class CoffeeController : MonoBehaviour
                     GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
             }
-            else
+            /*else
             {
                 WaterAnim.speed = 0;
                 GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
-            }
+            }*/
         }
         else if (phaseB3 == true)
         {
@@ -197,6 +209,8 @@ public class CoffeeController : MonoBehaviour
             Animator WaterAnim = WaterPouring2.GetComponent<Animator>();
             //WaterAnim.Play("PourAnim3");
 
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = WaterAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / WaterAnim.GetCurrentAnimatorClipInfo(0).Length;
+
             if (Input.touchCount > 0)
             {
                 WaterAnim.speed = 1;
@@ -204,13 +218,13 @@ public class CoffeeController : MonoBehaviour
                 pour3.SetActive(true);
                 GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
             }
-            else
+            /*else
             {
                 WaterAnim.speed = 0;
                 CupAnim.speed = 0;
                 pour3.SetActive(false);
                 GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
-            }
+            }*/
 
             if (CupLiquid.Fill <= 0.3f)
             {
@@ -230,6 +244,8 @@ public class CoffeeController : MonoBehaviour
             InstructionAnim.Play("InstructionInfinity");
             Animator WaterAnim = WaterPouring2.GetComponent<Animator>();
             WaterAnim.Play("LiquidColorAnim");
+
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = WaterAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / WaterAnim.GetCurrentAnimatorClipInfo(0).Length;
 
             if (Input.touchCount > 0)
             {
@@ -258,6 +274,8 @@ public class CoffeeController : MonoBehaviour
             WaterAnim.Play("PowderCupFillAnim");
             pourCoffee.SetActive(false);
 
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = WaterAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / WaterAnim.GetCurrentAnimatorClipInfo(0).Length;
+
             WaterPourer.SetActive(true);
 
             if (Input.touchCount > 0)
@@ -270,12 +288,12 @@ public class CoffeeController : MonoBehaviour
                     GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().UnPause();
                 }
             }
-            else
+            /*else
             {
                 WaterAnim.speed = 0;
                 pourWater.SetActive(false);
                 GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
-            }
+            }*/
         }
         else if (phaseB == true)
         {
@@ -283,6 +301,7 @@ public class CoffeeController : MonoBehaviour
             WaterAnim.speed = 0;*/
 
             //InstructionAnim.Play("InstructionDragDown");
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = BottleAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / BottleAnim.GetCurrentAnimatorClipInfo(0).Length;
 
             GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().Stop();
 
@@ -305,6 +324,7 @@ public class CoffeeController : MonoBehaviour
         }
         else if (phase2 == true)
         {
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = CupAnim2.GetCurrentAnimatorStateInfo(0).normalizedTime / CupAnim2.GetCurrentAnimatorClipInfo(0).Length;
             CoffeeGrinder.transform.parent.gameObject.SetActive(false);
             pour.SetActive(false);
             CupAnim.gameObject.SetActive(false);
@@ -343,6 +363,7 @@ public class CoffeeController : MonoBehaviour
         }
         else if (phase1 == true)
         {
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = CupAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / CupAnim.GetCurrentAnimatorClipInfo(0).Length;
             InstructionAnim.Play("InstructionDragDown");
             CupAnim.gameObject.SetActive(true);
             if (canControl == true)
@@ -381,6 +402,7 @@ public class CoffeeController : MonoBehaviour
         }
         else if(phase0_5 == true)
         {
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = CoffeeGrinder.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime / CoffeeGrinder.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0).Length;
             GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().Stop();
             InstructionAnim.Play("InstructionInfinity");
             if (Input.touchCount > 0)
@@ -422,6 +444,7 @@ public class CoffeeController : MonoBehaviour
             //InstructionAnim.Play("InstructionDragDown");
             if (canControl == true)
             {
+                GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = ScoopAnim.GetCurrentAnimatorStateInfo(0).normalizedTime / ScoopAnim.GetCurrentAnimatorClipInfo(0).Length;
                 if (Input.touchCount > 0)
                 {
                     Touch touch = Input.GetTouch(0);
@@ -433,10 +456,18 @@ public class CoffeeController : MonoBehaviour
                 }
                 else
                 {
-                    ScoopAnim.speed = 0;
-                    GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().Pause();
+                    Invoke("CancelInputScoop", 2f);
                 }
             }
+        }
+    }
+
+    public void CancelInputScoop()
+    {
+        if(Input.touchCount == 0)
+        {
+            ScoopAnim.speed = 0;
+            GameObject.Find("Sounds_BeanPour").GetComponent<AudioSource>().Pause();
         }
     }
 
@@ -472,7 +503,13 @@ public class CoffeeController : MonoBehaviour
 
     public IEnumerator StopWater()
     {
-        yield return new WaitForSeconds(6f);
+        if (PlayerPrefs.GetInt("Temp") == 0)
+        {
+            GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = 0;
+            PlayerPrefs.SetInt("Temp", 1);
+        }
+        GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount = Mathf.Lerp(GameObject.Find("ProgressBarFill").GetComponent<Image>().fillAmount, 1, Time.deltaTime);
+        yield return new WaitForSeconds(4f);
         GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
         WaterPouring.SetActive(false);
         phase0 = false;

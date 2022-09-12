@@ -19,12 +19,23 @@ public class AnimController : MonoBehaviour
 
     public void LevelComplete()
     {
+        FindObjectOfType<ButtonController>().IcingMenu.SetActive(false);
+        FindObjectOfType<ButtonController>().SleeveMenu.SetActive(false);
+
         InstructionAnim.Play("Idle");
         if(transform.parent.GetComponent<Animator>() != null)
         {
             transform.parent.GetComponent<Animator>().enabled = false;
         }
-        LevelCompleteMenu.SetActive(true);
+
+        if(FindObjectOfType<GameManager>().CupCustomizationUnlocked == true)
+        {
+            FindObjectOfType<ButtonController>().SleeveMenu.SetActive(true);
+        }
+        else
+        {
+            LevelCompleteMenu.SetActive(true);
+        }
     }
 
     public void BlenderAnimComplete()
@@ -346,6 +357,22 @@ public class AnimController : MonoBehaviour
         GameObject.Find("SprinkleBase").transform.GetChild(0).gameObject.SetActive(true);
         ButtonController b = GameObject.Find("ButtonController").GetComponent<ButtonController>();
         b.SprinkleMenu.SetActive(true);
+    }
+
+    public void FrothingPourComplete()
+    {
+        CoffeeController c = FindObjectOfType<CoffeeController>();
+        if(c.FrothingToppingsUnlocked == true)
+        {
+            c.FrothingMenu.SetActive(true);
+            c.phase2 = false;
+            c.MilkPour.SetActive(false);
+            GameObject.Find("Sounds_Pouring").GetComponent<AudioSource>().Pause();
+        }
+        else
+        {
+            LevelComplete();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
