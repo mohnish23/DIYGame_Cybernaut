@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -21,7 +22,8 @@ public class UpgradeManager : MonoBehaviour
         if (name == "UpgradeManager")
         {
             Upgrade();
-            Invoke("EnableButton", 1.3f);
+            if(PlayerPrefs.GetInt("LevelNum") != 1)
+                Invoke("EnableButton", 1.3f);
         }
 
         Text CoinTxt = GameObject.Find("CoinAmt").GetComponent<Text>();
@@ -110,6 +112,12 @@ public class UpgradeManager : MonoBehaviour
         CustomizeMenu.SetActive(false);
         StartMenu.SetActive(true);
         Camera.main.GetComponent<Animator>().enabled = true;
+    }
+
+    public void BackButton2()
+    {
+        PlayerPrefs.SetInt("LevelNum", PlayerPrefs.GetInt("LevelNum") + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void UpgradeDecor()
