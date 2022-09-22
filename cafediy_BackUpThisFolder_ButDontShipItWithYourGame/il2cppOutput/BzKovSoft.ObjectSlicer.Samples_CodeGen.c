@@ -180,7 +180,7 @@ static const int32_t s_InvokerIndices[45] =
 	4587,
 	5708,
 	5708,
-	11084,
+	11085,
 	5708,
 	5708,
 	5612,
@@ -195,7 +195,7 @@ static const int32_t s_InvokerIndices[45] =
 	5708,
 	5708,
 	5708,
-	11050,
+	11051,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_BzKovSoft_ObjectSlicer_Samples_CodeGenModule;
 const Il2CppCodeGenModule g_BzKovSoft_ObjectSlicer_Samples_CodeGenModule = 
